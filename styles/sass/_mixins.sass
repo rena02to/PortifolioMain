@@ -1,0 +1,13 @@
+@mixin align-center($direction)
+    display: flex
+    flex-direction: $direction
+    justify-content: center
+    align-items: center
+
+@mixin responsivo-600
+    @media (max-width: 600px)
+        @content
+
+@mixin responsivo-300
+    @media (max-width: 300px)
+        @content
