@@ -4,7 +4,7 @@ import { HiMiniBars3 } from 'react-icons/hi2';
 import { IoSettingsSharp } from 'react-icons/io5';
 import style from '../styles/css/Navbar.module.css';
 
-export default function Navbar(){
+export default function Navbar({ enAtivo, setEnAtivo, modoEscuro, setModoEscuro }){
     const [itemAtivo, setItemAtivo] = useState(1);
     const [windowSize, setWindowSize] = useState(0);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -111,14 +111,14 @@ export default function Navbar(){
                         <li>
                             <p>Linguagem:</p>
                             <label className={style.lang}>
-                                <input type='checkbox' />
+                                <input type='checkbox' checked={enAtivo} onChange={() => setEnAtivo(!enAtivo)} />
                                 <span className={style.slider}></span>
                             </label>
                         </li>
                         <li>
                             <p>Modo escuro:</p>
                             <label className={style.escuro}>
-                                <input type='checkbox' />
+                                <input type='checkbox' checked={modoEscuro} onChange={() => setModoEscuro(!modoEscuro)} />
                                 <span className={style.slider}></span>
                             </label>
                         </li>
