@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"Footer.module.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/_variables.sass","../sass/Footer.module.sass","../sass/_mixins.sass"],"names":[],"mappings":"AAAQ;ACGR;ECFI;EACA,gBDE6B;ECD7B;EACA","file":"Footer.module.css"}

@@ -6,6 +6,7 @@ import { i18n } from './translate/i18n';
 import HomePage from "@/components/Home";
 import Navbar from "@/components/Navbar";
 import Footer from '@/components/Footer';
+import ContateMe from '@/components/ContateMe';
 
 export default function Home() {
   const{ t, i18n: {changeLanguage, Language} } = useTranslation();
@@ -14,7 +15,10 @@ export default function Home() {
     <>
       <Provider store={store}>
         <Navbar i18n={i18n} changeLanguage={changeLanguage} />
-        <HomePage i18n={i18n} />
+        <main>
+          <HomePage i18n={i18n} />
+          <ContateMe i18n={i18n} />
+        </main>
         <Footer i18n={i18n} />
       </Provider>
     </>

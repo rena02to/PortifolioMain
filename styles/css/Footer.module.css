@@ -1,3 +1,9 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap");
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /*# sourceMappingURL=Footer.module.css.map */

@@ -13,7 +13,10 @@ export const messages = {
                     lang: 'Language',
                     dark: 'Dark Mode',
                 }
-            }
+            },
+            footer: {
+                link: 'Credit to creators',
+            },
         }
     }
 }
