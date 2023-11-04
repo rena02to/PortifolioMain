@@ -1,18 +1,22 @@
 'use client'
+import { Provider } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+import store from './../redux/store';
 import { i18n } from './translate/i18n';
 import HomePage from "@/components/Home";
 import Navbar from "@/components/Navbar";
-import { useState } from "react";
+import Footer from '@/components/Footer';
 
 export default function Home() {
-  const [enAtivo, setEnAtivo] = useState(false);
-  const [modoEscuro, setModoEscuro] = useState(false)
+  const{ t, i18n: {changeLanguage, Language} } = useTranslation();
 
   return (
     <>
-      <Navbar enAtivo={enAtivo} setEnAtivo={setEnAtivo} modoEscuro={modoEscuro} setModoEscuro={setModoEscuro} />
-      <HomePage />
-      <h1>{i18n.t('teste.app')}</h1>
+      <Provider store={store}>
+        <Navbar i18n={i18n} changeLanguage={changeLanguage} />
+        <HomePage i18n={i18n} />
+        <Footer i18n={i18n} />
+      </Provider>
     </>
   )
 }

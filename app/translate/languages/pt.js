@@ -1,8 +1,18 @@
 export const messages = {
     pt: {
         translations: {
-            teste: {
-                app: 'Teste 123'
+            navbar: {
+                title: 'Desenvolvedor Front-end',
+                item2: 'Projetos',
+                item3: 'Sobre Mim',
+                item4: 'Habilidades',
+                item5: 'Experiências',
+                item6: 'Contate-me',
+                config: {
+                    title: 'Configurações',
+                    lang: 'Linguagem',
+                    dark: 'Modo escuro',
+                }
             }
         }
     }

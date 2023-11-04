@@ -75,6 +75,12 @@
   letter-spacing: 4px;
   animation: aparecer 0.5s 1;
 }
+.navbar ul li .inativo:hover {
+  color: rgb(0, 170, 0);
+}
+.navbar ul .lista_inativo:hover {
+  transform: translateY(-3px);
+}
 .navbar .menuButton .menuClose {
   transition: transform 0.5s ease, color 0.5s ease;
 }
