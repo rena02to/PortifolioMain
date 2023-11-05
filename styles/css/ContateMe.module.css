@@ -1,3 +1,128 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap");
+.contato {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contato h2 {
+  padding-bottom: 30px;
+  font-size: 2rem;
+  color: rgb(0, 100, 200);
+  text-shadow: 0px 0px 4px;
+}
+.contato h3 {
+  font-size: 1.2rem;
+  color: rgb(0, 170, 0);
+  text-shadow: 0px 0px 4px;
+}
+.contato .main {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .contato .main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.contato .main form {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+.contato .main form .inputBox {
+  position: 5;
+  margin-top: 25px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.contato .main form .inputBox input, .contato .main form .inputBox textarea {
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+  padding: 10px;
+  border: 1px solid black;
+  outline: none;
+  z-index: 2;
+}
+.contato .main form .inputBox input {
+  height: 25px;
+}
+.contato .main form .inputBox textarea {
+  resize: none;
+  height: 150px;
+}
+.contato .main form .inputBox label {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  pointer-events: none;
+  transition: 0.5s;
+  padding-bottom: 0;
+  font-size: 0.86rem;
+  color: black;
+  z-index: 1;
+}
+.contato .main form .inputBox input:focus ~ label, .contato .main form .inputBox textarea:focus ~ label, .contato .main form .inputBox input:valid ~ label, .contato .main form .inputBox textarea:valid ~ label {
+  font-size: 0.8rem;
+  color: gray;
+  transform: translateX(-10px) translateY(-30px) translateZ(-20px);
+}
+.contato .main form button {
+  width: calc(90% + 22px);
+  max-width: 500px;
+  height: 35px;
+  margin-top: 10px;
+  border: 0px solid transparent;
+  background-color: rgb(0, 100, 200);
+  color: white;
+  cursor: pointer;
+}
+.contato .main form button:hover {
+  letter-spacing: 3px;
+  text-shadow: 0px 0px 4px;
+}
+.contato .main .links {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .contato .main .links {
+    padding-top: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.contato .main .links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: left;
+  padding-top: 15px;
+  text-decoration: none;
+  color: black;
+}
+.contato .main .links svg {
+  height: 35px;
+  width: 35px;
+}
+.contato .main .links .linkedin svg {
+  color: blue;
+}
 
 /*# sourceMappingURL=ContateMe.module.css.map */

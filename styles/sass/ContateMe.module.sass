@@ -1,0 +1,100 @@
+@use 'variables'
+@use 'mixins'
+
+.contato
+    padding-top: 100px
+    padding-bottom: 50px
+    @include mixins.align-center(column)
+    text-align: center
+    h2
+        padding-bottom: 30px
+        font-size: 2rem
+        color: variables.$blue-color
+        text-shadow: 0px 0px 4px
+    h3
+        font-size: 1.2rem
+        color: variables.$green-color
+        text-shadow: 0px 0px 4px
+    .main
+        width: 90%
+        display: flex
+        justify-content: center
+        @include mixins.responsivo-600
+            flex-direction: column
+            align-items: center
+        form
+            max-width: 500px
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            text-align: center
+            .inputBox
+                position: 5
+                margin-top: 25px
+                width: 90%
+                display: flex
+                flex-direction: column
+                align-items: center
+                position: relative
+                input, textarea
+                    width: 100%
+                    position: relative
+                    background-color: transparent
+                    padding: 10px
+                    border: 1px solid black
+                    outline: none
+                    z-index: 2
+                input
+                    height: 25px
+                textarea
+                    resize: none
+                    height: 150px
+                label
+                    position: absolute
+                    left: 10px
+                    top: 15px
+                    pointer-events: none
+                    transition: .5s
+                    padding-bottom: 0
+                    font-size: 0.86rem
+                    color: black
+                    z-index: 1
+                input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label
+                    font-size: 0.8rem
+                    color: gray
+                    transform: translateX(-10px) translateY(-30px) translateZ(-20px)
+            button
+                width: calc( 90% + 22px)
+                max-width: 500px
+                height: 35px
+                margin-top: 10px
+                border: 0px solid transparent
+                background-color: variables.$blue-color
+                color: white
+                cursor: pointer
+                &:hover
+                    letter-spacing: 3px
+                    text-shadow: 0px 0px 4px
+        .links
+            padding-top: 50px
+            display: flex
+            flex-direction: column
+            text-align: center
+            @include mixins.responsivo-600
+                padding-top: 20px
+                align-items: center
+                justify-content: center
+            a
+                @include mixins.align-center(row)
+                justify-content: left
+                padding-top: 15px
+                text-decoration: none
+                color: black
+            svg
+                height: 35px
+                width: 35px
+            .linkedin
+                svg
+                    color: blue

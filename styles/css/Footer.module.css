@@ -4,6 +4,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 0 20px 0 20px;
+  background-color: rgb(255, 255, 255);
 }
 
 /*# sourceMappingURL=Footer.module.css.map */

@@ -32,7 +32,7 @@ export default function Navbar({ i18n, changeLanguage }){
             })
             dispatch({
                 type: 'ChangeItemAtivo',
-                payload: {key},
+                payload: key,
             })
         }
     };
