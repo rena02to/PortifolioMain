@@ -108,14 +108,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px 10px 0 0;
+  padding: 20px 20px 0 20px;
 }
 .navbar .menu ul li {
   padding-bottom: 20px;
 }
 @media (max-width: 300px) {
   .navbar .menu ul li {
-    padding-left: 10px;
     padding-right: 0;
   }
 }
