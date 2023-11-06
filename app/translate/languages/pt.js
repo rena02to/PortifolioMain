@@ -4,10 +4,9 @@ export const messages = {
             navbar: {
                 title: 'Desenvolvedor Front-end',
                 item2: 'Projetos',
-                item3: 'Sobre Mim',
+                item3: 'Sobre',
                 item4: 'Habilidades',
-                item5: 'Experiências',
-                item6: 'Contate-me',
+                item5: 'Contate-me',
                 config: {
                     title: 'Configurações',
                     lang: 'Linguagem',

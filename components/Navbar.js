@@ -4,6 +4,10 @@ import { HiMiniBars3 } from 'react-icons/hi2';
 import { IoSettingsSharp } from 'react-icons/io5';
 import style from '../styles/css/Navbar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+import { IoHome, IoGameControllerSharp } from 'react-icons/io5';
+import { HiSquaresPlus } from 'react-icons/hi2';
+import { BsInfoCircleFill } from 'react-icons/bs';
+import { RiContactsBookFill } from 'react-icons/ri';
 
 export default function Navbar({ i18n, changeLanguage }){
     const dispatch = useDispatch();
@@ -12,12 +16,11 @@ export default function Navbar({ i18n, changeLanguage }){
     const settingsRef = useRef(null);
     
     const itens = [
-        {key:1, value:'Home', link:'#home'},
-        {key:2,value: i18n.t('navbar.item2'), link:'#projetos'},
-        {key:3, value: i18n.t('navbar.item3'), link:'#sobre'},
-        {key:4, value: i18n.t('navbar.item4'),link:'#habilidades'},
-        {key:5, value: i18n.t('navbar.item5'), link:'#experiencias'},
-        {key:6, value: i18n.t('navbar.item6'), link:'#contato'},
+        {key:1, value:'Home', link:'#home', icon: <IoHome />},
+        {key:2,value: i18n.t('navbar.item2'), link:'#projetos', icon: <HiSquaresPlus />},
+        {key:3,value: i18n.t('navbar.item3'), link:'#sobre', icon: <BsInfoCircleFill />},
+        {key:4, value: i18n.t('navbar.item4'),link:'#habilidades', icon: <IoGameControllerSharp />},
+        {key:5, value: i18n.t('navbar.item5'), link:'#contato', icon: <RiContactsBookFill />},
     ];
 
 
@@ -98,13 +101,18 @@ export default function Navbar({ i18n, changeLanguage }){
                 <p className={style.name}><span>&lt;</span> Renato Alves <span>/&gt;</span></p>
                 <p className={style.function}>//{i18n.t('navbar.title')}</p>
             </span>
-            {windowSize >= 1400 ? 
+            {windowSize >= 800 ? 
                 <ul className={style.lista}>
                     {itens.map((item) => (
                         <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo}>
-                            <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.value}</a>
+                            <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.icon}</a>
                         </li>
                     ))}
+                    <li>
+                        <button className={style.settings} onClick={clickSettings}>
+                            <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
+                        </button>
+                    </li>
                 </ul>
             : 
                 <>
@@ -116,7 +124,7 @@ export default function Navbar({ i18n, changeLanguage }){
                             <ul className={style.lista}>
                                 {itens.map((item) => (
                                     <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo}>
-                                        <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.value}</a>
+                                        <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.icon}</a>
                                     </li>
                                 ))}
                             </ul>
@@ -124,9 +132,6 @@ export default function Navbar({ i18n, changeLanguage }){
                     }
                 </>
             }
-            <button className={style.settings} onClick={clickSettings}>
-                <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
-            </button>
             {settingOpen &&
                 <div className={style.settingsMenu} ref={settingsRef}>
                     <p className={style.titulo}>{i18n.t('navbar.config.title')}</p>
