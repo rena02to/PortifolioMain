@@ -5,17 +5,12 @@
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 600px) {
-  .logo {
-    margin: 10px 0 10px 15px;
-  }
-}
 .logo p {
   font-family: "Edu TAS Beginner", cursive;
   font-size: 1.4rem;
   text-shadow: 0px 0px 5px;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .logo p {
     font-size: 1rem;
   }
@@ -64,12 +59,28 @@
   list-style: none;
   padding-left: 50px;
 }
+@media (max-width: 600px) {
+  .navbar ul {
+    padding-left: 0;
+  }
+}
 .navbar ul li {
   padding: 10px 25px 10px 25px;
+}
+@media (max-width: 800px) {
+  .navbar ul li {
+    padding: 10px 15px 10px 15px;
+  }
 }
 .navbar ul li svg {
   height: 30px;
   width: 30px;
+}
+@media (max-width: 800px) {
+  .navbar ul li svg {
+    height: 20px;
+    width: 20px;
+  }
 }
 .navbar ul li a {
   text-decoration: none;
@@ -86,6 +97,16 @@
 }
 .navbar ul .lista_inativo:hover {
   transform: translateY(-3px);
+}
+.navbar .menuButton {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 600px) {
+  .navbar .menuButton svg {
+    height: 20px;
+    width: 20px;
+  }
 }
 .navbar .menuButton .menuClose {
   transition: transform 0.5s ease, color 0.5s ease;
@@ -105,9 +126,10 @@
   z-index: 10;
   position: absolute;
 }
-@media (max-width: 350px) {
+@media (max-width: 600px) {
   .navbar .menu {
-    left: 10px;
+    top: 50px;
+    left: 60%;
   }
 }
 .navbar .menu ul {
@@ -131,8 +153,9 @@
   }
 }
 @media (max-width: 600px) {
-  .settings {
-    margin-right: 15px;
+  .settings svg {
+    height: 20px;
+    width: 20px;
   }
 }
 .settings .settingsClose {
@@ -158,11 +181,6 @@
   border: 2px solid black;
   animation: fade-in 0.5s ease-in-out;
   z-index: 10;
-}
-@media (max-width: 350px) {
-  .settingsMenu {
-    left: 10px;
-  }
 }
 @media (max-width: 600px) {
   .settingsMenu {

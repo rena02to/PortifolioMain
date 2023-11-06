@@ -4,13 +4,11 @@
     
 .logo
     @include mixins.align-center(column)
-    @include mixins.responsivo-600
-        margin: 10px 0 10px 15px
     p
         font-family: variables.$font
         font-size: 1.4rem
         text-shadow: 0px 0px 5px
-        @include mixins.responsivo-600
+        @include mixins.responsivo-800
             font-size: 1rem
     .function
         color: variables.$green-color
@@ -40,11 +38,18 @@
         @include mixins.align-center(row)
         list-style: none
         padding-left: 50px
+        @include mixins.responsivo-600
+            padding-left: 0
         li
             padding: 10px 25px 10px 25px
+            @include mixins.responsivo-800
+                padding: 10px 15px 10px 15px
             svg
                 height: 30px
                 width: 30px
+                @include mixins.responsivo-800
+                    height: 20px
+                    width: 20px
             a
                 text-decoration: none
                 color: black
@@ -58,6 +63,12 @@
         .lista_inativo:hover
             transform: translateY(-3px)
     .menuButton
+        margin-left: 20px
+        margin-right: 20px
+        svg
+            @include mixins.responsivo-600
+                height: 20px
+                width: 20px
         .menuClose
             transition: transform 0.5s ease, color 0.5s ease
         .menuOpen
@@ -73,8 +84,9 @@
         animation: fade-in 0.5s ease-in-out
         z-index: 10
         position: absolute
-        @include mixins.responsivo-350
-            left: 10px
+        @include mixins.responsivo-600
+            top: 50px
+            left: 60%
         ul
             @include mixins.align-center(column)
             li
@@ -89,8 +101,10 @@
         transform: rotate(360deg)
 
 .settings
-    @include mixins.responsivo-600
-        margin-right: 15px
+    svg
+        @include mixins.responsivo-600
+            height: 20px
+            width: 20px
     .settingsClose
         transition: transform 1s ease, color 1s ease
     .settingsOpen
@@ -109,8 +123,6 @@
     border: 2px solid black
     animation: fade-in 0.5s ease-in-out
     z-index: 10
-    @include mixins.responsivo-350
-        left: 10px
     @include mixins.responsivo-600
         right: 15px
     .titulo

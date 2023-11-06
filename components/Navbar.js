@@ -101,7 +101,7 @@ export default function Navbar({ i18n, changeLanguage }){
                 <p className={style.name}><span>&lt;</span> Renato Alves <span>/&gt;</span></p>
                 <p className={style.function}>//{i18n.t('navbar.title')}</p>
             </span>
-            {windowSize >= 800 ? 
+            {windowSize >= 600 ? 
                 <ul className={style.lista}>
                     {itens.map((item) => (
                         <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo}>
@@ -130,6 +130,9 @@ export default function Navbar({ i18n, changeLanguage }){
                             </ul>
                         </div>
                     }
+                    <button className={style.settings} onClick={clickSettings}>
+                        <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
+                    </button>
                 </>
             }
             {settingOpen &&
