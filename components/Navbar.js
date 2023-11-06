@@ -33,10 +33,6 @@ export default function Navbar({ i18n, changeLanguage }){
             dispatch({
                 type: 'MenuClose',
             })
-            dispatch({
-                type: 'ChangeItemAtivo',
-                payload: key,
-            })
         }
     };
 
@@ -95,6 +91,46 @@ export default function Navbar({ i18n, changeLanguage }){
         };
     }, [menuOpen, settingOpen]);
 
+    useEffect(() => {
+        const checkVisibility = () => {
+            const sections = document.querySelectorAll('section');
+            let sectionAtiva = '';
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= 100) {
+                    sectionAtiva = section.id;
+                }
+            });
+            
+            let key;
+            switch (sectionAtiva){
+                case 'home':
+                    key = 1;
+                    break;
+                case 'projetos':
+                    key = 2;
+                    break;
+                case 'sobre':
+                    key = 3;
+                    break;
+                case 'habilidades':
+                    key = 4;
+                    break;
+                case 'contato':
+                    key = 5;
+                    break;
+                default:
+                    break;
+            }
+            dispatch({type: 'ChangeItemAtivo', payload: key});
+        }
+        checkVisibility();
+        window.addEventListener('scroll', checkVisibility);
+        return() => {
+            window.removeEventListener('scroll', checkVisibility);
+        }
+    }, [])
+
     return(
         <nav className={style.navbar}>
             <span className={style.logo}>
@@ -104,11 +140,11 @@ export default function Navbar({ i18n, changeLanguage }){
             {windowSize >= 600 ? 
                 <ul className={style.lista}>
                     {itens.map((item) => (
-                        <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo}>
+                        <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo} title={item.value}>
                             <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.icon}</a>
                         </li>
                     ))}
-                    <li>
+                    <li title={i18n.t('navbar.config.title')}>
                         <button className={style.settings} onClick={clickSettings}>
                             <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
                         </button>
@@ -123,14 +159,14 @@ export default function Navbar({ i18n, changeLanguage }){
                         <div className={style.menu} ref={menuRef}>
                             <ul className={style.lista}>
                                 {itens.map((item) => (
-                                    <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo}>
+                                    <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo} title={item.value}>
                                         <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.icon}</a>
                                     </li>
                                 ))}
                             </ul>
                         </div>
                     }
-                    <button className={style.settings} onClick={clickSettings}>
+                    <button className={style.settings} onClick={clickSettings} title={i18n.t('navbar.config.title')}>
                         <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
                     </button>
                 </>

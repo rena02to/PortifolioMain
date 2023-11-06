@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10px 0 10px 0;
 }
 .logo p {
   font-family: "Edu TAS Beginner", cursive;
