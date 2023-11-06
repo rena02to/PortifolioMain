@@ -40,7 +40,6 @@
   text-align: center;
 }
 .contato .main form .inputBox {
-  position: 5;
   margin-top: 25px;
   width: 90%;
   display: flex;
@@ -72,14 +71,32 @@
   pointer-events: none;
   transition: 0.5s;
   padding-bottom: 0;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   color: gray;
   z-index: 1;
 }
 .contato .main form .inputBox input:focus ~ label, .contato .main form .inputBox textarea:focus ~ label, .contato .main form .inputBox input:valid ~ label, .contato .main form .inputBox textarea:valid ~ label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: gray;
   transform: translateX(-10px) translateY(-30px) translateZ(-20px);
+}
+.contato .main form .inputBox .errorMessage {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  border: 1px solid gray;
+  position: relative;
+  top: 10px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.contato .main form .inputBox .errorMessage::before {
+  content: "";
+  top: -20px;
+  left: 50%;
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
 }
 .contato .main form button {
   width: calc(90% + 22px);

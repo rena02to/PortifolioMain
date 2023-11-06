@@ -31,7 +31,6 @@
             width: 100%
             text-align: center
             .inputBox
-                position: 5
                 margin-top: 25px
                 width: 90%
                 display: flex
@@ -59,13 +58,29 @@
                     pointer-events: none
                     transition: .5s
                     padding-bottom: 0
-                    font-size: 0.86rem
+                    font-size: 0.95rem
                     color: gray
                     z-index: 1
                 input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label
-                    font-size: 0.8rem
+                    font-size: 0.85rem
                     color: gray
                     transform: translateX(-10px) translateY(-30px) translateZ(-20px)
+                .errorMessage
+                    background-color: variables.$errorMessage-color
+                    width: 100%
+                    border: 1px solid gray
+                    position: relative
+                    top: 10px
+                    border-radius: 20px
+                    margin-bottom: 15px
+                    &::before
+                        content: ''
+                        top: -20px
+                        left: 50%
+                        position: absolute
+                        border-width: 10px
+                        border-style: solid
+                        border-color: transparent transparent black transparent
             button
                 width: calc( 90% + 22px)
                 max-width: 500px

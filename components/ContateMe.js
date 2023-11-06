@@ -2,6 +2,7 @@ import style from './../styles/css/ContateMe.module.css';
 import { FaSquareGithub, FaLinkedin } from 'react-icons/fa6';
 import { Formik, ErrorMessage, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import emailjs from 'emailjs-com';
 
 export default function ContateMe(){
     const initialValues = {
@@ -18,33 +19,74 @@ export default function ContateMe(){
         conteudo : Yup.string().min(10, 'A mensagem deve ter pelo menos 10 letras').required('A mensagem é obrigatória!'),
     })
 
+    /*const fecharPoupUp = () => {
+        document.body.classList.remove(style.poup_upAberto);
+        setSendEmail(false);
+    }*/
+
+    const Enviar = (values, { setTouched }) => {
+        const serviceId = 'gmail_rena0to';
+        const templateId = 'template_wz4rv4k';
+        const userId = 'eviXOsPjXHdpw_97H';
+
+        const emailData = {
+            from_name: values.name,
+            from_email: values.email,
+            subject: values.assunto,
+            message: values.conteudo,
+        }
+
+        emailjs.send(serviceId, templateId, emailData, userId)
+            .then((response) => {
+                values.name = '';
+                values.email = '';
+                values.assunto = '';
+                values.conteudo = '';
+                //setar email enviado
+                setTouched({ name: false, email: false, assunto: false, conteudo: false });
+            })
+        .catch((error) => {/*setar que o email não foi enviado*/})
+
+        /*abrir o poup-up de mensagem enviada (ou nao)
+        setSendEmail(true);
+        setEnviando(true);*/
+    }
+
+    /*useEffect(() => {
+        if (enviando) {
+          setTimeout(() => {
+            setEnviando(false);
+          }, 3000);
+        }
+    }, [enviando]);*/
+
     return(
         <section className={style.contato} id="contato">
             <h2>Contate-me</h2>
             <span className={style.main}>
-                <Formik initialValues={initialValues} validationSchema={validationSchema} >
-                    {({ errors }) =>(
+                <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={Enviar} >
+                    {({ touched, setTouched }) =>(
                         <Form>
                             <h3>Me mande uma mensagem</h3>
                             <div className={style.inputBox}>
                                 <Field id="name" name="name" type="text" required />
                                 <label htmlFor="name">Seu nome e sobrenome</label>
-                                {errors.name ? <div className={style.error}><p>{errors.name}</p></div> : null}
+                                <ErrorMessage name='name' component='div' className={style.errorMessage} />
                             </div>
                             <div className={style.inputBox}>
                                 <Field id="email" name="email" type="text" required/>
                                 <label htmlFor="email">Seu e-mail</label>
-                                {errors.email ? <div className={style.error}><p>{errors.email}</p></div> : null}
+                                <ErrorMessage name='email' component='div' className={style.errorMessage} />
                             </div>
                             <div className={style.inputBox}>
                                 <Field id="assunto" name="assunto" type="text" required/>
                                 <label htmlFor="assunto">Assunto</label>
-                                {errors.assunto ? <div className={style.error}><p>{errors.assunto}</p></div> : null}
+                                <ErrorMessage name='assunto' component='div' className={style.errorMessage} />
                             </div>
                             <div className={style.inputBox}>
                                 <Field id="conteudo" name="conteudo" as="textarea" required/>
                                 <label htmlFor="conteudo">Sua mensagem...</label>
-                                {errors.conteudo ? <div className={style.error}><p>{errors.conteudo}</p></div> : null}
+                                <ErrorMessage name='conteudo' component='div' className={style.errorMessage} />
                             </div>
                             <button type='submit'>Enviar</button>
                         </Form>
