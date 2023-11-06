@@ -7,9 +7,9 @@ import emailjs from 'emailjs-com';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-export default function ContateMe(){
+export default function ContateMe({ i18n }){
     const dispatch = useDispatch();
-    const { enviado, enviando, sendEmail} = useSelector(rootReducer => rootReducer.useReducer)
+    const { enviado, enviando, sendEmail } = useSelector(rootReducer => rootReducer.useReducer)
 
     const initialValues = {
         name: '',
@@ -19,10 +19,10 @@ export default function ContateMe(){
     }
 
     const validationSchema = Yup.object().shape({
-        name : Yup.string().min(3, 'O nome deve ter pelo menos 3 letras').required('O nome é obrigatório!').matches(/^[A-Za-zÀ-ÖØ-öø-ÿ ]+$/, 'Apenas letras são permitidas!'),
-        email: Yup.string().email('Insira um endereço de e-mail válido!').required('O email é obrigatório!!'),
-        assunto : Yup.string().min(5, 'O assunto deve ter pelo menos 5 letras').required('O assunto é obrigatório!'),
-        conteudo : Yup.string().min(10, 'A mensagem deve ter pelo menos 10 letras').required('A mensagem é obrigatória!'),
+        name : Yup.string().min(3, i18n.t('contato.error.message1')).required(i18n.t('contato.error.message2')).matches(/^[A-Za-zÀ-ÖØ-öø-ÿ ]+$/, i18n.t('contato.error.message3')),
+        email: Yup.string().email(i18n.t('contato.error.message4')).required(i18n.t('contato.error.message5')),
+        assunto : Yup.string().min(5, i18n.t('contato.error.message6')).required(i18n.t('contato.error.message7')),
+        conteudo : Yup.string().min(10, i18n.t('contato.error.message8')).required(i18n.t('contato.error.message9')),
     })
 
     const FecharPoupUp = () => {
@@ -76,38 +76,38 @@ export default function ContateMe(){
 
     return(
         <section className={style.contato} id="contato">
-            <h2>Contate-me</h2>
+            <h2>{i18n.t('contato.title')}</h2>
             <span className={style.main}>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={Enviar} >
                     {({ touched, setTouched }) =>(
                         <Form>
-                            <h3>Me mande uma mensagem</h3>
+                            <h3>{i18n.t('contato.subtitle1')}</h3>
                             <div className={style.inputBox}>
                                 <Field id="name" name="name" type="text" required />
-                                <label htmlFor="name">Seu nome e sobrenome</label>
+                                <label htmlFor="name">{i18n.t('contato.input1')}</label>
                                 <ErrorMessage name='name' component='div' className={style.errorMessage} />
                             </div>
                             <div className={style.inputBox}>
                                 <Field id="email" name="email" type="text" required/>
-                                <label htmlFor="email">Seu e-mail</label>
+                                <label htmlFor="email">{i18n.t('contato.input2')}</label>
                                 <ErrorMessage name='email' component='div' className={style.errorMessage} />
                             </div>
                             <div className={style.inputBox}>
                                 <Field id="assunto" name="assunto" type="text" required/>
-                                <label htmlFor="assunto">Assunto</label>
+                                <label htmlFor="assunto">{i18n.t('contato.input3')}</label>
                                 <ErrorMessage name='assunto' component='div' className={style.errorMessage} />
                             </div>
                             <div className={style.inputBox}>
                                 <Field id="conteudo" name="conteudo" as="textarea" required/>
-                                <label htmlFor="conteudo">Sua mensagem...</label>
+                                <label htmlFor="conteudo">{i18n.t('contato.input4')}</label>
                                 <ErrorMessage name='conteudo' component='div' className={style.errorMessage} />
                             </div>
-                            <button type='submit'>Enviar</button>
+                            <button type='submit'>{i18n.t('contato.submit')}</button>
                         </Form>
                     )}
                 </Formik>
                 <div className={style.links}>
-                    <h3>Ou me adicione nas redes sociais</h3>
+                    <h3>{i18n.t('contato.subtitle2')}</h3>
                     <a href='https://linkedin.com/in/rena02to' className={style.linkedin}>
                         <FaLinkedin />
                         <p>/in/rena02to/</p>
@@ -123,20 +123,20 @@ export default function ContateMe(){
                     <div className={style.poupUpEmail}>
                         {enviando ? 
                             <>
-                                <p>Aguarde,</p>
-                                <p>sua mensagem está sendo enviada...</p>
+                                <p>{i18n.t('contato.poupUp.enviando.mensagem1')}</p>
+                                <p>{i18n.t('contato.poupUp.enviando.mensagem2')}</p>
                                 <span className={style.loadingBar} />
                             </>
                             : 
                             <>
                                 {enviado ? 
                                 <>
-                                    <p>Mensagem enviada com sucesso!</p>
-                                    <p>Te respondo o mais breve possível!</p>
+                                    <p>{i18n.t('contato.poupUp.enviado.mensagem1')}</p>
+                                    <p>{i18n.t('contato.poupUp.enviado.mensagem2')}</p>
                                 </> : 
                                 <>
-                                    <p>Erro ao enviar mensagem!</p>
-                                    <p>Tente novamente...</p>
+                                    <p>{i18n.t('contato.poupUp.enviado.mensagem1')}</p>
+                                    <p>{i18n.t('contato.poupUp.enviado.mensagem2')}</p>
                                 </>
                                 }
                                 <button type='button' onClick={FecharPoupUp}>Ok!</button>
