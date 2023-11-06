@@ -1,10 +1,16 @@
+'use client'
 import style from './../styles/css/ContateMe.module.css';
 import { FaSquareGithub, FaLinkedin } from 'react-icons/fa6';
 import { Formik, ErrorMessage, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 export default function ContateMe(){
+    const dispatch = useDispatch();
+    const { enviado, enviando, sendEmail} = useSelector(rootReducer => rootReducer.useReducer)
+
     const initialValues = {
         name: '',
         email: '',
@@ -19,10 +25,10 @@ export default function ContateMe(){
         conteudo : Yup.string().min(10, 'A mensagem deve ter pelo menos 10 letras').required('A mensagem é obrigatória!'),
     })
 
-    /*const fecharPoupUp = () => {
-        document.body.classList.remove(style.poup_upAberto);
-        setSendEmail(false);
-    }*/
+    const FecharPoupUp = () => {
+        document.body.classList.remove(style.abrirPoupUp);
+        dispatch({type: 'SendEmail'});
+    }
 
     const Enviar = (values, { setTouched }) => {
         const serviceId = 'gmail_rena0to';
@@ -42,23 +48,31 @@ export default function ContateMe(){
                 values.email = '';
                 values.assunto = '';
                 values.conteudo = '';
-                //setar email enviado
+                dispatch({
+                    type: 'Enviado',
+                    payload: true,
+                })
                 setTouched({ name: false, email: false, assunto: false, conteudo: false });
             })
-        .catch((error) => {/*setar que o email não foi enviado*/})
+        .catch((error) => {
+            dispatch({
+                type: 'Enviado',
+                payload: false,
+            })
+        })
 
-        /*abrir o poup-up de mensagem enviada (ou nao)
-        setSendEmail(true);
-        setEnviando(true);*/
+        document.body.classList.add(style.abrirPoupUp);
+        dispatch({type: 'SendEmail',});
+        dispatch({type: 'Enviando'});
     }
 
-    /*useEffect(() => {
+    useEffect(() => {
         if (enviando) {
           setTimeout(() => {
-            setEnviando(false);
-          }, 3000);
+            dispatch({type: 'Enviando'});
+          }, 3500);
         }
-    }, [enviando]);*/
+    }, [enviando]);
 
     return(
         <section className={style.contato} id="contato">
@@ -104,6 +118,34 @@ export default function ContateMe(){
                     </a>
                 </div>
             </span>
+            {sendEmail ? 
+                <div className={style.mainPoupUp}>
+                    <div className={style.poupUpEmail}>
+                        {enviando ? 
+                            <>
+                                <p>Aguarde,</p>
+                                <p>sua mensagem está sendo enviada...</p>
+                                <span className={style.loadingBar} />
+                            </>
+                            : 
+                            <>
+                                {enviado ? 
+                                <>
+                                    <p>Mensagem enviada com sucesso!</p>
+                                    <p>Te respondo o mais breve possível!</p>
+                                </> : 
+                                <>
+                                    <p>Erro ao enviar mensagem!</p>
+                                    <p>Tente novamente...</p>
+                                </>
+                                }
+                                <button type='button' onClick={FecharPoupUp}>Ok!</button>
+                            </>
+                        }
+                    </div>
+                </div>
+                : null
+            }
         </section>
     );
 }

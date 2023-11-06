@@ -5,6 +5,9 @@ const initialState = {
     windowSize: 0,
     menuOpen: false,
     settingOpen: false,
+    enviado: false,
+    enviando: false,
+    sendEmail: false,
 }
 
 const useReducer = (state = initialState, action) => {
@@ -25,6 +28,12 @@ const useReducer = (state = initialState, action) => {
             return {...state, menuOpen: false}
         case 'SettingsClose':
             return {...state, settingOpen: false}
+        case 'Enviado':
+            return {...state, enviado: action.payload}
+        case 'Enviando':
+            return {...state, enviando: !state.enviando}
+        case 'SendEmail':
+            return {...state, sendEmail: !state.sendEmail}
         default:
             return state;
     }

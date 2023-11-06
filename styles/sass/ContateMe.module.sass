@@ -115,3 +115,69 @@
             .linkedin
                 svg
                     color: blue
+
+.mainPoupUp
+    overflow: hidden
+
+.mainPoupUp
+    position: fixed
+    height: 100%
+    width: 100%
+    top: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: rgba(0, 0, 0, 0.5)
+    z-index: 9999
+    .poupUpEmail
+        background-color: variables.$nav-color
+        width: 90%
+        height: 250px
+        max-width: 550px
+        border-radius: 20px
+        box-shadow: 10px 10px 10px
+        @include mixins.align-center(column)
+        p
+            font-size: 1.5rem
+        button
+            margin-top: 25px
+            height: 40px
+            width: 100px
+            border-radius: 10px
+            border: 0px solid transparent
+            background-color: variables.$green-color
+            color: white
+            font-weight: 500
+            font-size: 1rem
+            &:hover
+                letter-spacing: 3px
+                text-shadow: 0px 0px 5px black
+                cursor: pointer
+        .loadingBar
+            margin-top: 25px
+            height: 15px
+            width: 70%
+            border: 1px solid black
+            border-radius: 20px
+            display: flex
+            justify-content: left
+            &::after
+                content: ''
+                height: 100%
+                width: 100%
+                border-radius: 20px
+                background-color: rgb(0, 150, 0)
+                animation: loading 3s 1
+        
+@keyframes loading
+    0%
+        width: 0
+    25%
+        width: 15%
+    60%
+        width: 50%
+    70%
+        width: 75%
+    100%
+        width: 100%
