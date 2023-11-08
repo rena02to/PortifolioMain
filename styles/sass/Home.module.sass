@@ -15,7 +15,7 @@
         border-radius: 50%
         @include mixins.responsivo-900
             margin-right: 0
-        @include mixins.responsivo-350
+        @include mixins.responsivo-600
             height: 200px
             width: 200px
             background-size: 200px
@@ -63,13 +63,40 @@
                     .value
                         font-size: 1.5rem
                         margin-left: 5px
-            svg
-                height: 20px
-                width: 20px
+            .help
+                position: relative
+                display: inline-block
+            .helpIcon
+                height: 25px
+                width: 25px
                 cursor: pointer
                 color: rgb(75, 75, 75)
                 @include mixins.responsivo-600
                     padding-top: 25px
+            .helpMenu
+                position: absolute
+                background-color: rgb(75, 75, 75)
+                color: variables.$nav-color
+                padding: 20px
+                text-align: center
+                border-radius: 6px
+                left: -310px
+                width: 300px
+                margin-top: 5px
+                &:before
+                    content: ''
+                    position: absolute
+                    bottom: 100%
+                    right: 5px
+                    border-width: 10px
+                    border-style: solid
+                    border-color: transparent transparent rgb(75, 75, 75) transparent
+                p
+                    span
+                        font-weight: 600
+                        color: variables.$green-color
+                .lifepoints, .projects
+                    margin-top: 15px
         .icones
             @include mixins.align-center(row)
             width: 50%
@@ -83,4 +110,3 @@
             svg
                 height: 50px
                 width: 50px
-            

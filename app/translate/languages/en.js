@@ -48,6 +48,18 @@ export const messages = {
                     },
                 },
             },
+            home: {
+                elementos:{
+                    elemento1: 'Exp in function (days)',
+                    elemento2: 'Projects',
+                    elemento3: 'Lifepoints',
+                },
+                helpText: {
+                    text1: 'Time since I got involved with front-end programming (time counted in days to be more consistent with the idea of ​​the portfolio).',
+                    text2: 'Number of projects developed to date.',
+                    text3: 'Briefly, my age in years. :)',
+                }
+            },
             footer: {
                 link: 'Credit to creators',
             },

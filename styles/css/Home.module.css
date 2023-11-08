@@ -27,7 +27,7 @@
     margin-right: 0;
   }
 }
-@media (max-width: 350px) {
+@media (max-width: 600px) {
   .home .foto {
     height: 200px;
     width: 200px;
@@ -124,16 +124,47 @@
   font-size: 1.5rem;
   margin-left: 5px;
 }
-.home .geral .conteudo svg {
-  height: 20px;
-  width: 20px;
+.home .geral .conteudo .help {
+  position: relative;
+  display: inline-block;
+}
+.home .geral .conteudo .helpIcon {
+  height: 25px;
+  width: 25px;
   cursor: pointer;
   color: rgb(75, 75, 75);
 }
 @media (max-width: 600px) {
-  .home .geral .conteudo svg {
+  .home .geral .conteudo .helpIcon {
     padding-top: 25px;
   }
+}
+.home .geral .conteudo .helpMenu {
+  position: absolute;
+  background-color: rgb(75, 75, 75);
+  color: rgb(240, 240, 240);
+  padding: 20px;
+  text-align: center;
+  border-radius: 6px;
+  left: -310px;
+  width: 300px;
+  margin-top: 5px;
+}
+.home .geral .conteudo .helpMenu:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgb(75, 75, 75) transparent;
+}
+.home .geral .conteudo .helpMenu p span {
+  font-weight: 600;
+  color: rgb(0, 170, 0);
+}
+.home .geral .conteudo .helpMenu .lifepoints, .home .geral .conteudo .helpMenu .projects {
+  margin-top: 15px;
 }
 .home .geral .icones {
   display: flex;

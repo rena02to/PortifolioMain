@@ -4,6 +4,7 @@ import { BiSolidHelpCircle } from 'react-icons/bi';
 import style from '../styles/css/Home.module.css';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
+import Popper from 'popper.js';
 
 export default function HomePage({ i18n }){
     const dispatch = useDispatch();
@@ -15,9 +16,9 @@ export default function HomePage({ i18n }){
     const idade = dataAtual.getMonth() + 1 >= 9 ? dataAtual.getFullYear() - 2002 : dataAtual.getFullYear() - 2002 - 1;
     const days = Math.ceil((dataAtual - dataInicio)/(1000 * 60 *60 * 24)) - 1;
     const elementos = [
-        {key: 1, title: 'Exp na função (dias)', value: `${days} XP`, caminho: '/images/exp.png', style: style.cogumelo},
-        {key: 2, title: 'Projetos', value: 5, caminho: '/images/headshot.png', style: style.headshot},
-        {key: 3, title: 'Pontos de vida', value: idade, caminho: '/images/1Up.png', style: style.exp},
+        {key: 1, title: i18n.t('home.elementos.elemento1'), value: `${days} XP`, caminho: '/images/exp.png', style: style.cogumelo},
+        {key: 2, title: i18n.t('home.elementos.elemento2'), value: 1, caminho: '/images/headshot.png', style: style.headshot},
+        {key: 3, title: i18n.t('home.elementos.elemento3'), value: idade, caminho: '/images/1Up.png', style: style.exp},
     ]
 
     return(
@@ -38,8 +39,16 @@ export default function HomePage({ i18n }){
                             </div>
                         </li>
                     ))}
-                    <BiSolidHelpCircle onMouseEnter={() => (dispatch({type: 'HelpOpen', payload: true}))} onMouseLeave={() => (dispatch({type: 'HelpOpen', payload: false}))} />
-                    {helpOpen ? <p>Teste</p> : null}
+                    <div className={style.help}>
+                        <BiSolidHelpCircle className={style.helpIcon} onMouseEnter={() => (dispatch({type: 'HelpOpen', payload: true}))} onMouseLeave={() => (dispatch({type: 'HelpOpen', payload: false}))} />
+                        {helpOpen ? 
+                            <div className={style.helpMenu}>
+                                <p className={style.exp}><span>{i18n.t('home.elementos.elemento1')}: </span>{i18n.t('home.helpText.text1')}</p>
+                                <p className={style.projects}><span>{i18n.t('home.elementos.elemento2')}: </span>{i18n.t('home.helpText.text2')}</p>
+                                <p className={style.lifepoints}><span>{i18n.t('home.elementos.elemento3')}: </span>{i18n.t('home.helpText.text3')}</p>
+                            </div>
+                        : null}
+                    </div>
                 </ul>
                 <ul className={style.icones}>
                     <li>
