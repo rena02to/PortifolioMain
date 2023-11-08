@@ -108,9 +108,9 @@ export default function ContateMe({ i18n }){
                 </Formik>
                 <div className={style.links}>
                     <h3>{i18n.t('contato.subtitle2')}</h3>
-                    <a href='https://linkedin.com/in/rena02to' className={style.linkedin}>
+                    <a href='https://linkedin.com/in/renatosalves' className={style.linkedin}>
                         <FaLinkedin />
-                        <p>/in/rena02to/</p>
+                        <p>/in/renatosalves/</p>
                     </a>
                     <a href='https://github.com/rena02to' className={style.github}>
                         <FaSquareGithub />

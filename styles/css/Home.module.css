@@ -192,13 +192,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 60%;
   justify-content: space-between;
 }
 @media (max-width: 600px) {
   .home .geral .icones {
     padding-top: 25px;
-    width: 40%;
   }
 }
 .home .geral .icones a {

@@ -1,10 +1,10 @@
 'use client'
 import { FaSquareGithub, FaLinkedin } from 'react-icons/fa6';
 import { BiSolidHelpCircle } from 'react-icons/bi';
+import { HiOutlineDownload } from 'react-icons/hi';
 import style from '../styles/css/Home.module.css';
 import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
-import Popper from 'popper.js';
 
 export default function HomePage({ i18n }){
     const dispatch = useDispatch();
@@ -52,10 +52,19 @@ export default function HomePage({ i18n }){
                 </ul>
                 <ul className={style.icones}>
                     <li>
-                        <a target="_blank" rel="noopener noreferrer" href='https://github.com/rena02to/'><FaSquareGithub /></a>
+                        <a target="_blank" rel="noopener noreferrer" href='https://github.com/rena02to/'>
+                            <FaSquareGithub title='Conheça meu GitHub'/>
+                        </a>
                     </li>
                     <li>
-                        <a target="_blank" rel="noopener noreferrer" href='https://linkedin.com/in/rena02to/'><FaLinkedin /></a>
+                        <a target="_blank" rel="noopener noreferrer" href='https://linkedin.com/in/renatosalves/'>
+                            <FaLinkedin title='Conheça meu Linkedin' />
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" rel="noopener noreferrer" href='/pdfs/Curriculo.pdf'>
+                            <HiOutlineDownload title='Baixe aqui meu currículo' />
+                        </a>
                     </li>
                 </ul>
             </div>
