@@ -151,7 +151,7 @@ export default function Navbar({ i18n, changeLanguage }){
                         <button className={style.menuButton} onClick={clickMenu}>
                             <HiMiniBars3 className={menuOpen ? style.menuOpen : style.menuClose}/>
                         </button>
-                        {menuOpen && 
+                        {menuOpen ?
                             <div className={style.menu} ref={menuRef}>
                                 <ul className={style.lista}>
                                     {itens.map((item) => (
@@ -161,6 +161,7 @@ export default function Navbar({ i18n, changeLanguage }){
                                     ))}
                                 </ul>
                             </div>
+                            : null
                         }
                     </div>
                 </>
@@ -169,7 +170,7 @@ export default function Navbar({ i18n, changeLanguage }){
                 <button className={style.settings} onClick={clickSettings} title={i18n.t('navbar.config.title')}>
                     <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
                 </button>
-                {settingOpen &&
+                {settingOpen ?
                     <div className={style.settingsMenu} ref={settingsRef}>
                         <p className={style.titulo}>{i18n.t('navbar.config.title')}</p>
                         <ul>
@@ -189,6 +190,7 @@ export default function Navbar({ i18n, changeLanguage }){
                             </li>
                         </ul>
                     </div>
+                    : null
                 }
             </div>
         </nav>

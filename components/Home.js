@@ -53,17 +53,17 @@ export default function HomePage({ i18n }){
                 <ul className={style.icones}>
                     <li>
                         <a target="_blank" rel="noopener noreferrer" href='https://github.com/rena02to/'>
-                            <FaSquareGithub title='Conheça meu GitHub'/>
+                            <FaSquareGithub title={i18n.t('home.icons.legenda1')}/>
                         </a>
                     </li>
                     <li>
                         <a target="_blank" rel="noopener noreferrer" href='https://linkedin.com/in/renatosalves/'>
-                            <FaLinkedin title='Conheça meu Linkedin' />
+                            <FaLinkedin title={i18n.t('home.icons.legenda2')} />
                         </a>
                     </li>
                     <li>
                         <a target="_blank" rel="noopener noreferrer" href='/pdfs/Curriculo.pdf'>
-                            <HiOutlineDownload title='Baixe aqui meu currículo' />
+                            <HiOutlineDownload title={i18n.t('home.icons.legenda3')} />
                         </a>
                     </li>
                 </ul>

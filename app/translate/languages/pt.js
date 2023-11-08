@@ -58,7 +58,12 @@ export const messages = {
                     text1: 'Tempo desde que me envolvi com a programação front-end (tempo contado em dias para ficar mais condizente com a ideia do portifólio).',
                     text2: 'Quantidade de projetos desenvolvidos até o presente momento.',
                     text3: 'Resumidamente, minha idade em anos. :)',
-                }
+                },
+                icons: {
+                    legenda1: 'Conheça meu GitHub',
+                    legenda2: 'Conheça meu Linkedin',
+                    legenda3: 'Baixe aqui meu currículo',
+                },
             },
             footer: {
                 link: 'Crédito aos criadores',

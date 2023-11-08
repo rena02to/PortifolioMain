@@ -58,7 +58,12 @@ export const messages = {
                     text1: 'Time since I got involved with front-end programming (time counted in days to be more consistent with the idea of ​​the portfolio).',
                     text2: 'Number of projects developed to date.',
                     text3: 'Briefly, my age in years. :)',
-                }
+                },
+                icons: {
+                    legenda1: 'Check out my GitHub',
+                    legenda2: 'Check out my Linkedin',
+                    legenda3: 'Download my resume here',
+                },
             },
             footer: {
                 link: 'Credit to creators',

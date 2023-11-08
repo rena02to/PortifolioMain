@@ -200,11 +200,14 @@
     padding-top: 25px;
   }
 }
-.home .geral .icones a {
+.home .geral .icones li a {
   text-decoration: none;
   color: rgb(75, 75, 75);
 }
-.home .geral .icones svg {
+.home .geral .icones li a:hover {
+  color: black;
+}
+.home .geral .icones li a svg {
   height: 50px;
   width: 50px;
 }
