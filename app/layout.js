@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <link rel='icon' href='/images/favicon.png' />
+      <link rel='icon' href='/images/icon.png' />
       <body className={inter.className}>
         {children}
         <Analytics />
