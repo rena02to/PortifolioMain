@@ -83,6 +83,11 @@
                 left: -310px
                 width: 300px
                 margin-top: 5px
+                @include mixins.responsivo-600
+                    left: -160px
+                @include mixins.responsivo-350
+                    width: 150px
+                    left: -85px
                 &:before
                     content: ''
                     position: absolute
@@ -91,6 +96,10 @@
                     border-width: 10px
                     border-style: solid
                     border-color: transparent transparent rgb(75, 75, 75) transparent
+                    @include mixins.responsivo-600
+                        right: 155px
+                    @include mixins.responsivo-350
+                        right: 85px
                 p
                     span
                         font-weight: 600

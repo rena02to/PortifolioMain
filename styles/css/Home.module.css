@@ -150,6 +150,17 @@
   width: 300px;
   margin-top: 5px;
 }
+@media (max-width: 600px) {
+  .home .geral .conteudo .helpMenu {
+    left: -160px;
+  }
+}
+@media (max-width: 350px) {
+  .home .geral .conteudo .helpMenu {
+    width: 150px;
+    left: -85px;
+  }
+}
 .home .geral .conteudo .helpMenu:before {
   content: "";
   position: absolute;
@@ -158,6 +169,16 @@
   border-width: 10px;
   border-style: solid;
   border-color: transparent transparent rgb(75, 75, 75) transparent;
+}
+@media (max-width: 600px) {
+  .home .geral .conteudo .helpMenu:before {
+    right: 155px;
+  }
+}
+@media (max-width: 350px) {
+  .home .geral .conteudo .helpMenu:before {
+    right: 85px;
+  }
 }
 .home .geral .conteudo .helpMenu p span {
   font-weight: 600;
