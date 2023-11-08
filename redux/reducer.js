@@ -8,6 +8,7 @@ const initialState = {
     enviado: false,
     enviando: false,
     sendEmail: false,
+    helpOpen: false,
 }
 
 const useReducer = (state = initialState, action) => {
@@ -34,6 +35,8 @@ const useReducer = (state = initialState, action) => {
             return {...state, enviando: !state.enviando}
         case 'SendEmail':
             return {...state, sendEmail: !state.sendEmail}
+        case 'HelpOpen':
+            return {...state, helpOpen: action.payload}
         default:
             return state;
     }

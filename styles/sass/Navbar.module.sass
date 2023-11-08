@@ -55,12 +55,12 @@
                 text-decoration: none
                 color: black
             .ativo
-                color: red
+                color: variables.$blue-color
                 svg
-                    animation: rotate 0.5s 1
+                    animation: rotate 1s 1
             .inativo
                 &:hover
-                    color: variables.$blue-color
+                    color: rgb(100, 100, 100)
         .lista_inativo:hover
             transform: translateY(-3px)
     .menuButton
@@ -133,6 +133,7 @@
             font-size: 1rem
     ul
         @include mixins.align-center(column)
+        padding: 0
         padding-top: 20px
         li
             padding-bottom: 20px

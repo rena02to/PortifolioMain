@@ -4,7 +4,7 @@ export const messages = {
             navbar: {
                 title: 'Front-end Developer',
                 item2: 'Projects',
-                item3: 'About',
+                item3: 'About me',
                 item4: 'Skills',
                 item5: 'Contact me',
                 config: {

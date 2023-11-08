@@ -1,5 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap");
 .home {
   padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.home .foto {
+  height: 300px;
+  width: 300px;
+  margin-right: 50px;
+  background-image: url("/images/foto.png");
+  background-size: 300px;
+  border-radius: 50%;
+}
+@media (max-width: 900px) {
+  .home .foto {
+    margin-right: 0;
+  }
+}
+@media (max-width: 350px) {
+  .home .foto {
+    height: 200px;
+    width: 200px;
+    background-size: 200px;
+  }
+}
+.home .geral {
+  height: 250px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  .home .geral {
+    height: auto;
+    width: auto;
+  }
+}
+.home .geral .title {
+  width: 100%;
+}
+@media (max-width: 900px) {
+  .home .geral .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+  }
+}
+.home .geral .title h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+@media (max-width: 600px) {
+  .home .geral .title h1 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 350px) {
+  .home .geral .title h1 {
+    font-size: 1.2rem;
+  }
+}
+.home .geral ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+@media (max-width: 600px) {
+  .home .geral ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.home .geral .conteudo {
+  justify-content: space-between;
+  width: 100%;
+}
+.home .geral .conteudo li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: rgb(75, 75, 75);
+}
+@media (max-width: 600px) {
+  .home .geral .conteudo li {
+    padding-top: 25px;
+  }
+}
+.home .geral .conteudo li .titulo {
+  font-size: 0.85rem;
+}
+.home .geral .conteudo li .legenda {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.home .geral .conteudo li .legenda .headshot {
+  height: 35px;
+  width: 35px;
+}
+.home .geral .conteudo li .legenda .value {
+  font-size: 1.5rem;
+  margin-left: 5px;
+}
+.home .geral .conteudo svg {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  color: rgb(75, 75, 75);
+}
+@media (max-width: 600px) {
+  .home .geral .conteudo svg {
+    padding-top: 25px;
+  }
+}
+.home .geral .icones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+@media (max-width: 600px) {
+  .home .geral .icones {
+    padding-top: 25px;
+    width: 40%;
+  }
+}
+.home .geral .icones a {
+  text-decoration: none;
+  color: rgb(75, 75, 75);
+}
+.home .geral .icones svg {
+  height: 50px;
+  width: 50px;
 }
 
 /*# sourceMappingURL=Home.module.css.map */

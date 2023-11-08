@@ -1,2 +1,86 @@
+@use 'variables'
+@use 'mixins'
+    
 .home
     padding-top: 100px
+    @include mixins.align-center(row)
+    @include mixins.responsivo-900
+        @include mixins.align-center(column)
+    .foto
+        height: 300px
+        width: 300px
+        margin-right: 50px
+        background-image: url('/images/foto.png')
+        background-size: 300px
+        border-radius: 50%
+        @include mixins.responsivo-900
+            margin-right: 0
+        @include mixins.responsivo-350
+            height: 200px
+            width: 200px
+            background-size: 200px
+    .geral
+        height: 250px
+        width: 500px
+        @include mixins.align-center(column)
+        justify-content: space-between
+        @include mixins.responsivo-600
+            height: auto
+            width: auto
+        .title
+            width: 100%
+            @include mixins.responsivo-900
+                @include mixins.align-center(column)
+                padding-top: 25px
+            h1
+                font-size: 2rem
+                font-weight: 500
+                @include mixins.responsivo-600
+                    font-size: 1.5rem
+                @include mixins.responsivo-350
+                    font-size: 1.2rem
+        ul
+            @include mixins.align-center(row)
+            list-style: none
+            @include mixins.responsivo-600
+                @include mixins.align-center(column)
+        .conteudo
+            justify-content: space-between
+            width: 100%
+            li
+                @include mixins.align-center(column)
+                font-size: 1.2rem
+                color: rgb(75, 75, 75)
+                @include mixins.responsivo-600
+                    padding-top: 25px
+                .titulo
+                    font-size: 0.85rem
+                .legenda
+                    @include mixins.align-center(row)
+                    .headshot
+                        height: 35px
+                        width: 35px
+                    .value
+                        font-size: 1.5rem
+                        margin-left: 5px
+            svg
+                height: 20px
+                width: 20px
+                cursor: pointer
+                color: rgb(75, 75, 75)
+                @include mixins.responsivo-600
+                    padding-top: 25px
+        .icones
+            @include mixins.align-center(row)
+            width: 50%
+            justify-content: space-between
+            @include mixins.responsivo-600
+                padding-top: 25px
+                width: 40%
+            a
+                text-decoration: none
+                color: rgb(75, 75, 75)
+            svg
+                height: 50px
+                width: 50px
+            

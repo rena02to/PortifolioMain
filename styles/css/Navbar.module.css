@@ -88,13 +88,13 @@
   color: black;
 }
 .navbar ul li .ativo {
-  color: red;
+  color: rgb(0, 100, 200);
 }
 .navbar ul li .ativo svg {
-  animation: rotate 0.5s 1;
+  animation: rotate 1s 1;
 }
 .navbar ul li .inativo:hover {
-  color: rgb(0, 100, 200);
+  color: rgb(100, 100, 100);
 }
 .navbar ul .lista_inativo:hover {
   transform: translateY(-3px);
@@ -202,6 +202,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0;
   padding-top: 20px;
 }
 .settingsMenu ul li {
