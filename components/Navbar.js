@@ -144,54 +144,53 @@ export default function Navbar({ i18n, changeLanguage }){
                             <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.icon}</a>
                         </li>
                     ))}
-                    <li title={i18n.t('navbar.config.title')}>
-                        <button className={style.settings} onClick={clickSettings}>
-                            <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
-                        </button>
-                    </li>
                 </ul>
             : 
                 <>
-                    <button className={style.menuButton} onClick={clickMenu}>
-                        <HiMiniBars3 className={menuOpen ? style.menuOpen : style.menuClose}/>
-                    </button>
-                    {menuOpen && 
-                        <div className={style.menu} ref={menuRef}>
-                            <ul className={style.lista}>
-                                {itens.map((item) => (
-                                    <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo} title={item.value}>
-                                        <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.icon}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    }
-                    <button className={style.settings} onClick={clickSettings} title={i18n.t('navbar.config.title')}>
-                        <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
-                    </button>
+                    <div className={style.containerMenu}>
+                        <button className={style.menuButton} onClick={clickMenu}>
+                            <HiMiniBars3 className={menuOpen ? style.menuOpen : style.menuClose}/>
+                        </button>
+                        {menuOpen && 
+                            <div className={style.menu} ref={menuRef}>
+                                <ul className={style.lista}>
+                                    {itens.map((item) => (
+                                        <li key={item.key} className={itemAtivo === item.key ? style.lista_ativo : style.lista_inativo} title={item.value}>
+                                            <a href={item.link} onClick={(event) => handleLinkClick(event, item.key)} className={itemAtivo === item.key ? style.ativo : style.inativo}>{item.icon}</a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        }
+                    </div>
                 </>
             }
-            {settingOpen &&
-                <div className={style.settingsMenu} ref={settingsRef}>
-                    <p className={style.titulo}>{i18n.t('navbar.config.title')}</p>
-                    <ul>
-                        <li>
-                            <p>{i18n.t('navbar.config.lang')}:</p>
-                            <label className={style.lang}>
-                                <input type='checkbox' checked={enAtivo} onChange={() => {dispatch({type: 'ChangeLanguage'}); changeLanguage(enAtivo ? 'pt' : 'en')}} />
-                                <span className={style.slider}></span>
-                            </label>
-                        </li>
-                        <li>
-                            <p>{i18n.t('navbar.config.dark')}:</p>
-                            <label className={style.escuro}>
-                                <input type='checkbox' checked={modoEscuro} onChange={() => dispatch({type: 'ChangeModoEscuro'})} />
-                                <span className={style.slider}></span>
-                            </label>
-                        </li>
-                    </ul>
-                </div>
-            }
+            <div className={style.containerSettings}>
+                <button className={style.settings} onClick={clickSettings} title={i18n.t('navbar.config.title')}>
+                    <IoSettingsSharp className={settingOpen ? style.settingsOpen : style.settingsClose} />
+                </button>
+                {settingOpen &&
+                    <div className={style.settingsMenu} ref={settingsRef}>
+                        <p className={style.titulo}>{i18n.t('navbar.config.title')}</p>
+                        <ul>
+                            <li>
+                                <p>{i18n.t('navbar.config.lang')}:</p>
+                                <label className={style.lang}>
+                                    <input type='checkbox' checked={enAtivo} onChange={() => {dispatch({type: 'ChangeLanguage'}); changeLanguage(enAtivo ? 'pt' : 'en')}} />
+                                    <span className={style.slider}></span>
+                                </label>
+                            </li>
+                            <li>
+                                <p>{i18n.t('navbar.config.dark')}:</p>
+                                <label className={style.escuro}>
+                                    <input type='checkbox' checked={modoEscuro} onChange={() => dispatch({type: 'ChangeModoEscuro'})} />
+                                    <span className={style.slider}></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                }
+            </div>
         </nav>
     )
 }
