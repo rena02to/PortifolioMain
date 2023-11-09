@@ -12,4 +12,5 @@
   /public/images/1Up.png/ | <a target="_blank" rel="noopener noreferrer" href="https://br.freepik.com/icone/cogumelo_528111#fromView=search&term=super+mario&page=1&position=19&track=ais?log-in=google">Ícone de Those Icons</a> em Freepik
   /public/images/headshot.png/ | <a target="_blank" rel="noopener noreferrer" href="https://www.freepik.com/icon/headshot_1403642">Icon by Smashicons</a> em Freepik
   /public/images/exp.png/ | <a target="_blank" rel="noopener noreferrer" href="https://br.freepik.com/icone/nivel_5542205">Ícone de Freepik</a>
+  /public/images/leon.png/ | <a target="_blank" rel="noopener noreferrer" href="https://www.pngwing.com/pt/free-png-nvksl">Avatar do Leon </a> em pngwing
 </div>
