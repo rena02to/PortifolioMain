@@ -13,4 +13,5 @@
   /public/images/headshot.png/ | <a target="_blank" rel="noopener noreferrer" href="https://www.freepik.com/icon/headshot_1403642">Icon by Smashicons</a> em Freepik
   /public/images/exp.png/ | <a target="_blank" rel="noopener noreferrer" href="https://br.freepik.com/icone/nivel_5542205">Ícone de Freepik</a>
   /public/images/leon.png/ | <a target="_blank" rel="noopener noreferrer" href="https://www.pngwing.com/pt/free-png-nvksl">Avatar do Leon </a> em pngwing
+  /public/images/ui.png/ | <a target="_blank" rel="noopener noreferrer" href="https://br.freepik.com/icone/ui_1260243">Ícone de monkik</a> em Freepik
 </div>
