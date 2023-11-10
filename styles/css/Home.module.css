@@ -5,6 +5,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-size: 600px;
 }
 @media (max-width: 900px) {
   .home {

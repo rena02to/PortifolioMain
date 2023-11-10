@@ -1,5 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap");
 .habilidades {
   padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.habilidades .tecnologias, .habilidades .boosters {
+  background-color: red;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.habilidades .tecnologias .title, .habilidades .boosters .title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-bottom: 50px;
+  margin-top: 20px;
+}
+.habilidades .tecnologias {
+  margin-left: 100px;
+}
+.habilidades .tecnologias .descricao {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 200px;
+  background-color: blue;
+  margin-bottom: 50px;
+  padding: 25px;
+  box-shadow: 15px 15px 10px black;
+}
+.habilidades .tecnologias .subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.habilidades .tecnologias ul li {
+  border-radius: 5px;
+}
+.habilidades .boostersContainer li {
+  border-radius: 50%;
+}
+.habilidades .tecnologiasContainer, .habilidades .boostersContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin-right: 25px;
+  margin-bottom: 50px;
+}
+.habilidades .tecnologiasContainer li, .habilidades .boostersContainer li {
+  height: 80px;
+  width: 80px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.habilidades .tecnologiasContainer li svg, .habilidades .boostersContainer li svg {
+  height: 60px;
+  width: 60px;
+}
+.habilidades .tecnologiasContainer li .html, .habilidades .boostersContainer li .html {
+  color: rgb(228, 77, 38);
+}
+.habilidades .tecnologiasContainer li .css, .habilidades .boostersContainer li .css {
+  color: rgb(38, 77, 228);
+}
+.habilidades .tecnologiasContainer li .js, .habilidades .boostersContainer li .js {
+  color: rgb(247, 223, 30);
+}
+.habilidades .tecnologiasContainer li .react, .habilidades .boostersContainer li .react {
+  color: rgb(0, 216, 255);
+}
+.habilidades .tecnologiasContainer li .redux, .habilidades .boostersContainer li .redux {
+  color: rgb(118, 74, 188);
+}
+.habilidades .tecnologiasContainer li .node, .habilidades .boostersContainer li .node {
+  color: rgb(140, 200, 75);
+}
+.habilidades .tecnologiasContainer li .sass, .habilidades .boostersContainer li .sass {
+  color: rgb(204, 102, 153);
+}
+.habilidades .tecnologiasContainer li .ts, .habilidades .boostersContainer li .ts {
+  color: rgb(49, 120, 198);
+}
+.habilidades .tecnologiasContainer li .mysql, .habilidades .boostersContainer li .mysql {
+  color: rgb(0, 56, 168);
+}
+.habilidades .boosters {
+  margin-right: 100px;
+}
+.habilidades .boosters .infos {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  width: calc(120% - 50px);
+  background-color: blue;
+  transform: translate(calc(-10% - 25px));
+  box-shadow: 15px 15px 10px black;
+  margin-bottom: 50px;
+}
+.habilidades .boosters .infos .personagem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+.habilidades .boosters .infos .personagem p {
+  font-size: 1.3rem;
+}
+.habilidades .boosters .infos .personagem p span {
+  font-weight: 600;
+}
+.habilidades .boosters .infos .subtitle {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+.habilidades .boosters .infos .nivelHabilidade {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.habilidades .boosters .infos .nivelHabilidade .habilidades {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.habilidades .boosters .infos .nivelHabilidade .habilidades p {
+  height: 30px;
+}
+.habilidades .boosters .infos .nivelHabilidade .nivel {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.habilidades .boosters .infos .nivelHabilidade .nivel span {
+  height: 20px;
+  width: 100%;
+  border: 1px solid red;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px black;
+}
+.habilidades .boosters .infos .nivelHabilidade .nivel span div {
+  background-color: red;
+  height: 20px;
+  border-radius: 10px;
+}
+.habilidades .boosters .infos .nivelHabilidade .nivel span .ui {
+  width: 80%;
+}
+.habilidades .boosters .infos .nivelHabilidade .nivel span .responsividade {
+  width: 85%;
+}
+.habilidades .boosters .infos .nivelHabilidade .nivel span .frameworks {
+  width: 70%;
 }
 
 /*# sourceMappingURL=Habilidades.module.css.map */

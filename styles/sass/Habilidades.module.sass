@@ -1,2 +1,138 @@
+@use 'mixins'
+@use 'variables'
+    
 .habilidades
     padding-top: 100px
+    @include mixins.align-center(row)
+    justify-content: space-between
+    img
+    .tecnologias, .boosters
+        background-color: red
+        border-radius: 10px
+        width: 100%
+        min-height: 600px
+        display: flex
+        flex-direction: column
+        align-items: center
+        .title
+            font-size: 1.8rem
+            font-weight: 500
+            padding-bottom: 50px
+            margin-top: 20px
+    .tecnologias
+        margin-left: 100px
+        .descricao
+            display: flex
+            flex-direction: column
+            width: 80%
+            height: 200px
+            background-color: blue
+            margin-bottom: 50px
+            padding: 25px
+            box-shadow: 15px 15px 10px black
+        .subtitle
+            font-size: 1.5rem
+            font-weight: 600
+            margin-bottom: 15px
+        ul
+            li
+                border-radius: 5px
+    .boostersContainer
+        li
+            border-radius: 50%
+    .tecnologiasContainer, .boostersContainer
+        display: flex
+        flex-direction: row
+        align-items: center
+        flex-wrap: wrap
+        justify-content: space-between
+        list-style: none
+        margin-right: 25px
+        margin-bottom: 50px
+        li
+            height: 80px
+            width: 80px
+            background-color: white
+            display: flex
+            justify-content: center
+            align-items: center
+            margin-left: 25px
+            margin-bottom: 25px
+            overflow: hidden
+            cursor: pointer
+            svg
+                height: 60px
+                width: 60px
+            .html
+                color: rgb(228, 77, 38)
+            .css
+                color: rgb(38, 77, 228)
+            .js
+                color: rgb(247, 223, 30)
+            .react
+                color: rgb(0, 216, 255)
+            .redux
+                color: rgb(118, 74, 188)
+            .node
+                color: rgb(140, 200, 75)
+            .sass
+                color: rgb(204, 102, 153)
+            .ts
+                color: rgb(49, 120, 198)
+            .mysql
+                color: rgb(0, 56, 168)
+    .boosters
+        margin-right: 100px
+        .infos
+            display: flex
+            flex-direction: column
+            padding: 25px
+            width: calc( 120% -  50px)
+            background-color: blue
+            transform: translate(calc( -10% - 25px ))
+            box-shadow: 15px 15px 10px black
+            margin-bottom: 50px
+            .personagem
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                padding-bottom: 50px
+                p
+                    font-size: 1.3rem
+                    span
+                        font-weight: 600
+            .subtitle
+                font-size: 1.8rem
+                font-weight: 900
+                margin-bottom: 15px
+            .nivelHabilidade
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                .habilidades
+                    display: flex
+                    flex-direction: column
+                    padding: 0
+                    p
+                        height: 30px
+                .nivel
+                    display: flex
+                    flex-direction: column
+                    width: 60%
+                    span
+                        height: 20px
+                        width: 100%
+                        border: 1px solid red
+                        margin-bottom: 10px
+                        border-radius: 10px
+                        box-shadow: 5px 5px 5px black
+                        div
+                            background-color: red
+                            height: 20px
+                            border-radius: 10px
+                        .ui
+                            width: variables.$ui
+                        .responsividade
+                            width: variables.$responsividade
+                        .frameworks
+                            width: variables.$frameworks
