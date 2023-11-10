@@ -14,4 +14,10 @@
   /public/images/exp.png/ | <a target="_blank" rel="noopener noreferrer" href="https://br.freepik.com/icone/nivel_5542205">Ícone de Freepik</a>
   /public/images/leon.png/ | <a target="_blank" rel="noopener noreferrer" href="https://www.pngwing.com/pt/free-png-nvksl">Avatar do Leon </a> em pngwing
   /public/images/ui.png/ | <a target="_blank" rel="noopener noreferrer" href="https://br.freepik.com/icone/ui_1260243">Ícone de monkik</a> em Freepik
+  /public/images/html.png/ | <a href="https://br.freepik.com/icone/html-5_732212#fromView=search&term=html&page=1&position=30&track=ais">Ícone de Pixel perfect</a> em Freepik
+  /public/images/css.png/ | <a href="https://br.freepik.com/icone/css-3_732190#fromView=search&term=css&page=1&position=1&track=ais">Ícone de Pixel perfect</a> em Freepik
+  /public/images/js.png/ | <a href="https://br.freepik.com/icone/js_5968292#fromView=search&term=javascript&page=1&position=0&track=ais">Ícone de Freepik</a>
+  /public/images/ts.png/ | <a href="https://br.freepik.com/icone/dactilografado_5968381#fromView=search&term=typescript&page=1&position=0&track=ais">Ícone de Freepik</a>
+  /public/images/github.png/ | <a href="https://br.freepik.com/icone/github_919847#fromView=resource_detail&position=9">Ícone de Freepik</a>
+  /public/images/mysql.pmg/ | <a href="https://br.freepik.com/icone/mysql_919836#fromView=search&term=icone+de+mysql&page=1&position=0&track=ais">Ícone de Freepik</a>
 </div>
