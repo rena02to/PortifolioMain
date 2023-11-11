@@ -5,7 +5,10 @@
     padding-top: 100px
     @include mixins.align-center(row)
     justify-content: space-between
-    img
+    .leon
+        @include mixins.responsivo-1100
+            height: 700px
+            width: 350px
     .tecnologias, .boosters
         background-color: red
         border-radius: 10px
@@ -21,15 +24,28 @@
             margin-top: 20px
     .tecnologias
         margin-left: 100px
+        @include mixins.responsivo-1500
+            margin-left: 20px
         .descricao
             display: flex
             flex-direction: column
             width: 80%
-            height: 200px
+            min-height: 200px
             background-color: blue
             margin-bottom: 50px
             padding: 25px
             box-shadow: 15px 15px 10px black
+            @include mixins.responsivo-1300
+                width: 70%
+            .verde, .vermelho
+                margin-top: 10px
+                font-weight: 600
+                span
+                    color: black
+            .verde
+                color: variables.$green-color
+            .vermelho
+                color: red
         .subtitle
             font-size: 1.5rem
             font-weight: 600
@@ -39,6 +55,8 @@
                 border-radius: 5px
     .boostersContainer
         li
+            border-radius: 50%
+        .locked::after
             border-radius: 50%
     .tecnologiasContainer, .boostersContainer
         display: flex
@@ -60,9 +78,20 @@
             margin-bottom: 25px
             overflow: hidden
             cursor: pointer
+            position: relative
+            @include mixins.responsivo-1300
+                height: 50px
+                width: 50px
             svg
                 height: 60px
                 width: 60px
+                @include mixins.responsivo-1300
+                    height: 40px
+                    width: 40px
+            img
+                @include mixins.responsivo-1300
+                    height: 40px
+                    width: 40px
             .html
                 color: rgb(228, 77, 38)
             .css
@@ -81,8 +110,25 @@
                 color: rgb(49, 120, 198)
             .mysql
                 color: rgb(0, 56, 168)
+        .ativo
+            &Unlocked, &Locked
+                box-shadow: 0px 0px 10px 10px variables.$gray-color
+        .ativoLocked::after, .inativoLocked::after
+            content: ''
+            background-color: rgba(0, 0, 0, 0.5)
+            position: absolute
+            height: 100%
+            width: 100%
+            background-image: url('/images/locked.png')
+            background-size: 40px
+            background-repeat: no-repeat
+            background-position: center
+            @include mixins.responsivo-1300
+                background-size: 30px
     .boosters
         margin-right: 100px
+        @include mixins.responsivo-1500
+            margin-right: 20px
         .infos
             display: flex
             flex-direction: column
@@ -92,6 +138,12 @@
             transform: translate(calc( -10% - 25px ))
             box-shadow: 15px 15px 10px black
             margin-bottom: 50px
+            @include mixins.responsivo-1300
+                width: calc( 140% -  50px)
+                transform: translate(calc( -15% - 25px ))
+            @include mixins.responsivo-1100
+                width: calc( 160% -  50px)
+                transform: translate(calc( -20% - 25px ))
             .personagem
                 display: flex
                 flex-direction: row
@@ -101,6 +153,8 @@
                     font-size: 1.3rem
                     span
                         font-weight: 600
+                .avatar
+                    margin-right: 20px
             .subtitle
                 font-size: 1.8rem
                 font-weight: 900
@@ -114,6 +168,7 @@
                     flex-direction: column
                     padding: 0
                     p
+                        text-align: center
                         height: 30px
                 .nivel
                     display: flex
@@ -125,7 +180,7 @@
                         border: 1px solid red
                         margin-bottom: 10px
                         border-radius: 10px
-                        box-shadow: 5px 5px 5px black
+                        box-shadow: 7px 7px 5px black
                         div
                             background-color: red
                             height: 20px

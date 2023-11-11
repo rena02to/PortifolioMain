@@ -10,6 +10,8 @@ const initialState = {
     sendEmail: false,
     helpOpen: false,
     descricao: 'descricaoDefault',
+    tecnologiaAtiva: 0,
+    statusTecnologiaAtiva: 'Unlocked',
 }
 
 const useReducer = (state = initialState, action) => {
@@ -40,6 +42,10 @@ const useReducer = (state = initialState, action) => {
             return {...state, helpOpen: action.payload}
         case 'setDescricao':
             return {...state, descricao: action.payload}
+        case 'setTecnologiaAtiva':
+            return {...state, tecnologiaAtiva: action.payload}
+        case 'setStatusTecnologiaAtiva':
+            return {...state, statusTecnologiaAtiva: action.payload}
         default:
             return state;
     }

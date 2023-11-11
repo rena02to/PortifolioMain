@@ -1,32 +1,31 @@
 import Image from 'next/image';
 import style from './../styles/css/Habilidades.module.css';
 import { TbBrandRedux, TbBrandNextjs } from 'react-icons/tb';
-import { FaReact, FaSass, FaNodeJs } from 'react-icons/fa6';
+import { FaReact, FaSass, FaNodeJs, FaLock } from 'react-icons/fa6';
 import { useDispatch, useSelector } from 'react-redux';
 
 export default function Habilidades({ i18n }){
     const dispatch = useDispatch();
-    const { descricao, enAtivo } = useSelector(rootReducer => rootReducer.useReducer)
-
+    const { descricao, enAtivo, tecnologiaAtiva, statusTecnologiaAtiva } = useSelector(rootReducer => rootReducer.useReducer)
 
     const tecnologias = [
-        { key: 1, value: 'HTML', status: 'unlocked', icone: <Image src='/images/html.png' height={65} width={60} />, text: 'html' },
-        { key: 2, value: 'CSS', status: 'unlocked', icone: <Image src='/images/css.png' height={65} width={60} />, text: 'css' },
-        { key: 3, value: 'JavaScript', status: 'unlocked', icone: <Image src='/images/js.png' height={60} width={60} />, text: 'js' },
-        { key: 4, value: 'React', status: 'unlocked', icone: <FaReact className={style.react} />, text: 'react' },
-        { key: 5, value: 'Redux', status: 'unclocked', icone: <TbBrandRedux className={style.redux} />, text: 'redux' },
-        { key: 6, value: 'Next.js', status: 'unlocked', icone: <TbBrandNextjs className={style.next} />, text: 'next' },
-        { key: 7, value: 'Node.js', status: 'locked', icone: <FaNodeJs className={style.node}/>, text: 'node' },
+        { key: 1, value: 'HTML', status: 'Unlocked', icone: <Image src='/images/html.png' height={65} width={60} />, text: 'html' },
+        { key: 2, value: 'CSS', status: 'Unlocked', icone: <Image src='/images/css.png' height={65} width={60} />, text: 'css' },
+        { key: 3, value: 'JavaScript', status: 'Unlocked', icone: <Image src='/images/js.png' height={60} width={60} />, text: 'js' },
+        { key: 4, value: 'React', status: 'Unlocked', icone: <FaReact className={style.react} />, text: 'react' },
+        { key: 5, value: 'Redux', status: 'Unlocked', icone: <TbBrandRedux className={style.redux} />, text: 'redux' },
+        { key: 6, value: 'Next.js', status: 'Unlocked', icone: <TbBrandNextjs className={style.next} />, text: 'next' },
+        { key: 7, value: 'Node.js', status: 'Locked', icone: <FaNodeJs className={style.node}/>, text: 'node' },
     ]
 
     const boosters = [
-        { key: 1, value: 'Sass', status: 'unlocked', icone: <FaSass className={style.sass} />, text: 'sass' },
-        { key: 2, value: 'GitHub', status: 'unlocked', icone: <Image src='/images/github.png' height={60} width={60} />, text: 'github' },
-        { key: 3, value: 'UI design', status: 'unlocked', icone: <Image src='/images/ui.png' width={60} height={60} />, text: 'ui' },
-        { key: 4, value: 'UX design', status: 'unlocked', icone: <Image src='/images/ux.png' width={60} height={60} />, text: 'ux' },
-        { key: 5, value: 'MySQL', status: 'locked', icone: <Image src='/images/mysql.png' height={60} width={60} />, text: 'mysql' },
-        { key: 6, value: 'TypeScript', status: 'locked', icone: <Image src='/images/ts.png' height={60} width={60} />, text: 'ts' },
-        { key: 7, value: (enAtivo ? 'English' : 'Inglês'), status: 'locked', icone: <Image src='/images/eua.png' width={60} height={60} />, text: 'ingles' },
+        { key: 8, value: 'Sass', status: 'Unlocked', icone: <FaSass className={style.sass} />, text: 'sass' },
+        { key: 9, value: 'GitHub', status: 'Unlocked', icone: <Image src='/images/github.png' height={60} width={60} />, text: 'github' },
+        { key: 10, value: 'UI design', status: 'Unlocked', icone: <Image src='/images/ui.png' width={60} height={60} />, text: 'ui' },
+        { key: 11, value: 'UX design', status: 'Unlocked', icone: <Image src='/images/ux.png' width={60} height={60} />, text: 'ux' },
+        { key: 12, value: 'MySQL', status: 'Locked', icone: <Image src='/images/mysql.png' height={60} width={60} />, text: 'mysql' },
+        { key: 13, value: 'TypeScript', status: 'Locked', icone: <Image src='/images/ts.png' height={60} width={60} />, text: 'ts' },
+        { key: 14, value: (enAtivo ? 'English' : 'Inglês'), status: 'Locked', icone: <Image src='/images/eua.png' width={60} height={60} />, text: 'ingles' },
     ]
 
     return(
@@ -35,7 +34,7 @@ export default function Habilidades({ i18n }){
                 <p className={style.title}>{i18n.t('habilidades.title')}</p>
                 <ul className={style.tecnologiasContainer}>
                     {tecnologias.map((tecnologia) => (
-                        <li key={tecnologia.key} title={tecnologia.value} onClick={() => {dispatch({type: 'setDescricao', payload: tecnologia.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false})}}>
+                        <li className={tecnologia.key === tecnologiaAtiva ? (tecnologia.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (tecnologia.status === 'Locked' ? style.inativoLocked : null)} key={tecnologia.key} title={tecnologia.value} onClick={() => {dispatch({type: 'setDescricao', payload: tecnologia.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: tecnologia.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: tecnologia.status})}}>
                             {tecnologia.icone}
                         </li>
                     ))}
@@ -43,14 +42,20 @@ export default function Habilidades({ i18n }){
                 <div className={style.descricao}>
                     <p className={style.subtitle}>Descrição</p>
                     <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
+                    {tecnologiaAtiva !== 0 ?
+                        <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
+                            <span>STATUS: </span>{statusTecnologiaAtiva}
+                        </p> 
+                        : null
+                    }
                 </div>
             </div>
-            <Image src='/images/leon.png' width={400} height={800} />
+            <Image className={style.leon} src='/images/leon.png' width={400} height={800} />
             <div className={style.boosters}>
                 <p className={style.title}>BOOSTERS</p>
                 <ul className={style.boostersContainer}>
                     {boosters.map((booster) => (
-                        <li key={booster.key} title={booster.value} onClick={() => {dispatch({type: 'setDescricao', payload: booster.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false})}}>
+                        <li className={booster.key === tecnologiaAtiva ? (booster.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (booster.status === 'Locked' ? style.inativoLocked : null)} key={booster.key} title={booster.value} onClick={() => {dispatch({type: 'setDescricao', payload: booster.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: booster.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: booster.status})}}>
                             {booster.icone}
                         </li>
                     ))}
@@ -58,7 +63,7 @@ export default function Habilidades({ i18n }){
                 <div className={style.infos}>
                     <p className={style.subtitle}>RENATO ALVES</p>
                     <div className={style.personagem}>
-                        <p><span>Avatar:</span> Leon S. Kenedy | Resident Evil</p>
+                        <p className={style.avatar}><span>Avatar:</span> Leon S. Kenedy | Resident Evil</p>
                         <p><span>{i18n.t('habilidades.level')}:</span> 999+</p>
                     </div>
                     <div className={style.nivelHabilidade}>

@@ -7,6 +7,12 @@
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 1100px) {
+  .habilidades .leon {
+    height: 700px;
+    width: 350px;
+  }
+}
 .habilidades .tecnologias, .habilidades .boosters {
   background-color: red;
   border-radius: 10px;
@@ -25,15 +31,38 @@
 .habilidades .tecnologias {
   margin-left: 100px;
 }
+@media (max-width: 1500px) {
+  .habilidades .tecnologias {
+    margin-left: 20px;
+  }
+}
 .habilidades .tecnologias .descricao {
   display: flex;
   flex-direction: column;
   width: 80%;
-  height: 200px;
+  min-height: 200px;
   background-color: blue;
   margin-bottom: 50px;
   padding: 25px;
   box-shadow: 15px 15px 10px black;
+}
+@media (max-width: 1300px) {
+  .habilidades .tecnologias .descricao {
+    width: 70%;
+  }
+}
+.habilidades .tecnologias .descricao .verde, .habilidades .tecnologias .descricao .vermelho {
+  margin-top: 10px;
+  font-weight: 600;
+}
+.habilidades .tecnologias .descricao .verde span, .habilidades .tecnologias .descricao .vermelho span {
+  color: black;
+}
+.habilidades .tecnologias .descricao .verde {
+  color: rgb(0, 170, 0);
+}
+.habilidades .tecnologias .descricao .vermelho {
+  color: red;
 }
 .habilidades .tecnologias .subtitle {
   font-size: 1.5rem;
@@ -44,6 +73,9 @@
   border-radius: 5px;
 }
 .habilidades .boostersContainer li {
+  border-radius: 50%;
+}
+.habilidades .boostersContainer .locked::after {
   border-radius: 50%;
 }
 .habilidades .tecnologiasContainer, .habilidades .boostersContainer {
@@ -67,10 +99,29 @@
   margin-bottom: 25px;
   overflow: hidden;
   cursor: pointer;
+  position: relative;
+}
+@media (max-width: 1300px) {
+  .habilidades .tecnologiasContainer li, .habilidades .boostersContainer li {
+    height: 50px;
+    width: 50px;
+  }
 }
 .habilidades .tecnologiasContainer li svg, .habilidades .boostersContainer li svg {
   height: 60px;
   width: 60px;
+}
+@media (max-width: 1300px) {
+  .habilidades .tecnologiasContainer li svg, .habilidades .boostersContainer li svg {
+    height: 40px;
+    width: 40px;
+  }
+}
+@media (max-width: 1300px) {
+  .habilidades .tecnologiasContainer li img, .habilidades .boostersContainer li img {
+    height: 40px;
+    width: 40px;
+  }
 }
 .habilidades .tecnologiasContainer li .html, .habilidades .boostersContainer li .html {
   color: rgb(228, 77, 38);
@@ -99,8 +150,32 @@
 .habilidades .tecnologiasContainer li .mysql, .habilidades .boostersContainer li .mysql {
   color: rgb(0, 56, 168);
 }
+.habilidades .tecnologiasContainer .ativoUnlocked, .habilidades .tecnologiasContainer .ativoLocked, .habilidades .boostersContainer .ativoUnlocked, .habilidades .boostersContainer .ativoLocked {
+  box-shadow: 0px 0px 10px 10px rgb(100, 100, 100);
+}
+.habilidades .tecnologiasContainer .ativoLocked::after, .habilidades .tecnologiasContainer .inativoLocked::after, .habilidades .boostersContainer .ativoLocked::after, .habilidades .boostersContainer .inativoLocked::after {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/locked.png");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (max-width: 1300px) {
+  .habilidades .tecnologiasContainer .ativoLocked::after, .habilidades .tecnologiasContainer .inativoLocked::after, .habilidades .boostersContainer .ativoLocked::after, .habilidades .boostersContainer .inativoLocked::after {
+    background-size: 30px;
+  }
+}
 .habilidades .boosters {
   margin-right: 100px;
+}
+@media (max-width: 1500px) {
+  .habilidades .boosters {
+    margin-right: 20px;
+  }
 }
 .habilidades .boosters .infos {
   display: flex;
@@ -111,6 +186,18 @@
   transform: translate(calc(-10% - 25px));
   box-shadow: 15px 15px 10px black;
   margin-bottom: 50px;
+}
+@media (max-width: 1300px) {
+  .habilidades .boosters .infos {
+    width: calc(140% - 50px);
+    transform: translate(calc(-15% - 25px));
+  }
+}
+@media (max-width: 1100px) {
+  .habilidades .boosters .infos {
+    width: calc(160% - 50px);
+    transform: translate(calc(-20% - 25px));
+  }
 }
 .habilidades .boosters .infos .personagem {
   display: flex;
@@ -123,6 +210,9 @@
 }
 .habilidades .boosters .infos .personagem p span {
   font-weight: 600;
+}
+.habilidades .boosters .infos .personagem .avatar {
+  margin-right: 20px;
 }
 .habilidades .boosters .infos .subtitle {
   font-size: 1.8rem;
@@ -140,6 +230,7 @@
   padding: 0;
 }
 .habilidades .boosters .infos .nivelHabilidade .habilidades p {
+  text-align: center;
   height: 30px;
 }
 .habilidades .boosters .infos .nivelHabilidade .nivel {
@@ -153,7 +244,7 @@
   border: 1px solid red;
   margin-bottom: 10px;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 7px 7px 5px black;
 }
 .habilidades .boosters .infos .nivelHabilidade .nivel span div {
   background-color: red;
