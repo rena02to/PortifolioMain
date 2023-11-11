@@ -19,7 +19,6 @@
   /public/images/css.png/ | <a href="https://www.flaticon.com/free-icons/css-3" title="css 3 icons">Ícone de Freepik</a> em Flaticon
   /public/images/js.png/ | <a href="https://br.freepik.com/icone/js_5968292#fromView=search&term=javascript&page=1&position=0&track=ais">Ícone de Freepik</a> em Freepik
   /public/images/ts.png/ | <a href="https://br.freepik.com/icone/dactilografado_5968381#fromView=search&term=typescript&page=1&position=0&track=ais">Ícone de Freepik</a> em Freepik
-  /public/images/github.png/ | <a href="https://br.freepik.com/icone/github_919847#fromView=resource_detail&position=9">Ícone de Freepik</a> em Freepik
   /public/images/mysql.png/ | <a href="https://br.freepik.com/icone/mysql_919836#fromView=search&term=icone+de+mysql&page=1&position=0&track=ais">Ícone de Freepik</a> em Freepik
   /public/images/locked.png/ | <a href="https://www.flaticon.com/free-icons/security" title="security icons">Ícone de Fathema Khanom</a> em Flaticon
 </div>
