@@ -5,10 +5,121 @@
     padding-top: 100px
     @include mixins.align-center(row)
     justify-content: space-between
+    @include mixins.responsivo-900
+        flex-direction: column
     .leon
         @include mixins.responsivo-1100
             height: 700px
             width: 350px
+        @include mixins.responsivo-600
+            height: 600px
+            width: 300px
+    .informacoes
+        @include mixins.align-center(row)
+        margin-top: 20px
+        @include mixins.responsivo-600
+            @include mixins.align-center(column)
+        .conteudoInterno
+            @include mixins.align-center(column)
+    .descricao
+        display: flex
+        flex-direction: column
+        width: 80%
+        min-height: 200px
+        background-color: blue
+        margin-bottom: 50px
+        padding: 25px
+        box-shadow: 15px 15px 10px black
+        @include mixins.responsivo-1300
+            width: 70%
+        @include mixins.responsivo-900
+            width: 80%
+        .verde, .vermelho
+            margin-top: 10px
+            font-weight: 600
+            span
+                color: black
+        .verde
+            color: variables.$green-color
+        .vermelho
+            color: red
+    .subtitle
+        font-size: 1.5rem
+        font-weight: 600
+        margin-bottom: 15px
+        font-size: 1.5rem
+        font-weight: 600
+        margin-bottom: 15px
+    .infos
+        display: flex
+        flex-direction: column
+        padding: 25px
+        width: calc( 120% -  50px)
+        background-color: blue
+        transform: translate(calc( -10% - 25px ))
+        box-shadow: 15px 15px 10px black
+        margin-bottom: 50px
+        @include mixins.responsivo-1300
+            width: calc( 140% -  50px)
+            transform: translate(calc( -15% - 25px ))
+        @include mixins.responsivo-1100
+            width: calc( 160% -  50px)
+            transform: translate(calc( -20% - 25px ))
+        @include mixins.responsivo-900
+            width: 100%
+            transform: translate(-10%)
+        @include mixins.responsivo-600
+            width: 80%
+            transform: translate(0)
+        .personagem
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            padding-bottom: 50px
+            @include mixins.responsivo-700
+                flex-direction: column
+            p
+                font-size: 1.2rem
+                span
+                    font-weight: 600
+            .avatar
+                margin-right: 20px
+        .subtitle
+            font-size: 1.8rem
+            font-weight: 900
+            margin-bottom: 15px
+        .nivelHabilidade
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            .habilidades
+                display: flex
+                flex-direction: column
+                padding: 0
+                p
+                    text-align: center
+                    height: 30px
+            .nivel
+                display: flex
+                flex-direction: column
+                width: 60%
+                span
+                    height: 20px
+                    width: 100%
+                    border: 1px solid red
+                    margin-bottom: 10px
+                    border-radius: 10px
+                    box-shadow: 7px 7px 5px black
+                    div
+                        background-color: red
+                        height: 20px
+                        border-radius: 10px
+                    .ui
+                        width: variables.$ui
+                    .responsividade
+                        width: variables.$responsividade
+                    .frameworks
+                        width: variables.$frameworks
     .tecnologias, .boosters
         background-color: red
         border-radius: 10px
@@ -17,6 +128,10 @@
         display: flex
         flex-direction: column
         align-items: center
+        @include mixins.responsivo-900
+            width: 90%
+            margin: 0
+            min-height: 200px
         .title
             font-size: 1.8rem
             font-weight: 500
@@ -26,30 +141,6 @@
         margin-left: 100px
         @include mixins.responsivo-1500
             margin-left: 20px
-        .descricao
-            display: flex
-            flex-direction: column
-            width: 80%
-            min-height: 200px
-            background-color: blue
-            margin-bottom: 50px
-            padding: 25px
-            box-shadow: 15px 15px 10px black
-            @include mixins.responsivo-1300
-                width: 70%
-            .verde, .vermelho
-                margin-top: 10px
-                font-weight: 600
-                span
-                    color: black
-            .verde
-                color: variables.$green-color
-            .vermelho
-                color: red
-        .subtitle
-            font-size: 1.5rem
-            font-weight: 600
-            margin-bottom: 15px
         ul
             li
                 border-radius: 5px
@@ -129,65 +220,5 @@
         margin-right: 100px
         @include mixins.responsivo-1500
             margin-right: 20px
-        .infos
-            display: flex
-            flex-direction: column
-            padding: 25px
-            width: calc( 120% -  50px)
-            background-color: blue
-            transform: translate(calc( -10% - 25px ))
-            box-shadow: 15px 15px 10px black
-            margin-bottom: 50px
-            @include mixins.responsivo-1300
-                width: calc( 140% -  50px)
-                transform: translate(calc( -15% - 25px ))
-            @include mixins.responsivo-1100
-                width: calc( 160% -  50px)
-                transform: translate(calc( -20% - 25px ))
-            .personagem
-                display: flex
-                flex-direction: row
-                justify-content: space-between
-                padding-bottom: 50px
-                p
-                    font-size: 1.3rem
-                    span
-                        font-weight: 600
-                .avatar
-                    margin-right: 20px
-            .subtitle
-                font-size: 1.8rem
-                font-weight: 900
-                margin-bottom: 15px
-            .nivelHabilidade
-                display: flex
-                flex-direction: row
-                justify-content: space-between
-                .habilidades
-                    display: flex
-                    flex-direction: column
-                    padding: 0
-                    p
-                        text-align: center
-                        height: 30px
-                .nivel
-                    display: flex
-                    flex-direction: column
-                    width: 60%
-                    span
-                        height: 20px
-                        width: 100%
-                        border: 1px solid red
-                        margin-bottom: 10px
-                        border-radius: 10px
-                        box-shadow: 7px 7px 5px black
-                        div
-                            background-color: red
-                            height: 20px
-                            border-radius: 10px
-                        .ui
-                            width: variables.$ui
-                        .responsividade
-                            width: variables.$responsividade
-                        .frameworks
-                            width: variables.$frameworks
+        @include mixins.responsivo-900
+            margin-right: 0px

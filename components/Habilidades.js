@@ -3,10 +3,11 @@ import style from './../styles/css/Habilidades.module.css';
 import { TbBrandRedux, TbBrandNextjs } from 'react-icons/tb';
 import { FaReact, FaSass, FaNodeJs, FaLock } from 'react-icons/fa6';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 export default function Habilidades({ i18n }){
     const dispatch = useDispatch();
-    const { descricao, enAtivo, tecnologiaAtiva, statusTecnologiaAtiva } = useSelector(rootReducer => rootReducer.useReducer)
+    const { descricao, enAtivo, tecnologiaAtiva, statusTecnologiaAtiva, windowSize } = useSelector(rootReducer => rootReducer.useReducer)
 
     const tecnologias = [
         { key: 1, value: 'HTML', status: 'Unlocked', icone: <Image src='/images/html.png' height={65} width={60} />, text: 'html' },
@@ -28,6 +29,23 @@ export default function Habilidades({ i18n }){
         { key: 14, value: (enAtivo ? 'English' : 'Inglês'), status: 'Locked', icone: <Image src='/images/eua.png' width={60} height={60} />, text: 'ingles' },
     ]
 
+    const updateWindowSize = () => {
+        dispatch({
+            type: 'ChangeWindowSize',
+            payload: window.innerWidth,
+        })
+    };
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            dispatch({
+                type: 'ChangeWindowSize',
+                payload: window.innerWidth,
+            })
+            window.addEventListener('resize', updateWindowSize);
+        }
+    }, []);
+
     return(
         <section className={style.habilidades} id="habilidades">
             <div className={style.tecnologias}>
@@ -39,18 +57,61 @@ export default function Habilidades({ i18n }){
                         </li>
                     ))}
                 </ul>
-                <div className={style.descricao}>
-                    <p className={style.subtitle}>Descrição</p>
-                    <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
-                    {tecnologiaAtiva !== 0 ?
-                        <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
-                            <span>STATUS: </span>{statusTecnologiaAtiva}
-                        </p> 
-                        : null
-                    }
-                </div>
+                {windowSize > 900 ?
+                    <div className={style.descricao}>
+                        <p className={style.subtitle}>Descrição</p>
+                        <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
+                        {tecnologiaAtiva !== 0 ?
+                            <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
+                                <span>STATUS: </span>{statusTecnologiaAtiva}
+                            </p> 
+                            : null
+                        }
+                    </div>
+                    : null
+                }
             </div>
-            <Image className={style.leon} src='/images/leon.png' width={400} height={800} />
+            {windowSize > 900 ?
+                <Image className={style.leon} src='/images/leon.png' width={400} height={800} />
+                : null
+            }
+            {windowSize <= 900 ?
+                <div className={style.informacoes}>
+                    <Image className={style.leon} src='/images/leon.png' width={400} height={800} />
+                    <div className={style.conteudoInterno}>
+                        <div className={style.descricao}>
+                            <p className={style.subtitle}>Descrição</p>
+                            <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
+                            {tecnologiaAtiva !== 0 ?
+                                <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
+                                    <span>STATUS: </span>{statusTecnologiaAtiva}
+                                </p> 
+                                : null
+                            }
+                        </div>
+                        <div className={style.infos}>
+                            <p className={style.subtitle}>RENATO ALVES</p>
+                            <div className={style.personagem}>
+                                <p className={style.avatar}><span>Avatar:</span> Leon S. Kenedy | Resident Evil</p>
+                                <p><span>{i18n.t('habilidades.level')}:</span> 999+</p>
+                            </div>
+                            <div className={style.nivelHabilidade}>
+                                <div className={style.habilidades}>
+                                    <p>UI design</p>
+                                    <p>{i18n.t('habilidades.responsividade')}</p>
+                                    <p>{i18n.t('habilidades.frameworks')}</p>
+                                </div>
+                                <div className={style.nivel}>
+                                    <span><div className={style.ui}></div></span>
+                                    <span><div className={style.responsividade}></div></span>
+                                    <span><div className={style.frameworks}></div></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                : null
+            }
             <div className={style.boosters}>
                 <p className={style.title}>BOOSTERS</p>
                 <ul className={style.boostersContainer}>
@@ -60,25 +121,28 @@ export default function Habilidades({ i18n }){
                         </li>
                     ))}
                 </ul>
-                <div className={style.infos}>
-                    <p className={style.subtitle}>RENATO ALVES</p>
-                    <div className={style.personagem}>
-                        <p className={style.avatar}><span>Avatar:</span> Leon S. Kenedy | Resident Evil</p>
-                        <p><span>{i18n.t('habilidades.level')}:</span> 999+</p>
-                    </div>
-                    <div className={style.nivelHabilidade}>
-                        <div className={style.habilidades}>
-                            <p>UI design</p>
-                            <p>{i18n.t('habilidades.responsividade')}</p>
-                            <p>{i18n.t('habilidades.frameworks')}</p>
+                {windowSize > 900 ?
+                    <div className={style.infos}>
+                        <p className={style.subtitle}>RENATO ALVES</p>
+                        <div className={style.personagem}>
+                            <p className={style.avatar}><span>Avatar:</span> Leon S. Kenedy | Resident Evil</p>
+                            <p><span>{i18n.t('habilidades.level')}:</span> 999+</p>
                         </div>
-                        <div className={style.nivel}>
-                            <span><div className={style.ui}></div></span>
-                            <span><div className={style.responsividade}></div></span>
-                            <span><div className={style.frameworks}></div></span>
+                        <div className={style.nivelHabilidade}>
+                            <div className={style.habilidades}>
+                                <p>UI design</p>
+                                <p>{i18n.t('habilidades.responsividade')}</p>
+                                <p>{i18n.t('habilidades.frameworks')}</p>
+                            </div>
+                            <div className={style.nivel}>
+                                <span><div className={style.ui}></div></span>
+                                <span><div className={style.responsividade}></div></span>
+                                <span><div className={style.frameworks}></div></span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    : null
+                }
             </div>
         </section>
     );

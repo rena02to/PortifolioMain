@@ -7,11 +7,184 @@
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 900px) {
+  .habilidades {
+    flex-direction: column;
+  }
+}
 @media (max-width: 1100px) {
   .habilidades .leon {
     height: 700px;
     width: 350px;
   }
+}
+@media (max-width: 600px) {
+  .habilidades .leon {
+    height: 600px;
+    width: 300px;
+  }
+}
+.habilidades .informacoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+@media (max-width: 600px) {
+  .habilidades .informacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.habilidades .informacoes .conteudoInterno {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.habilidades .descricao {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  min-height: 200px;
+  background-color: blue;
+  margin-bottom: 50px;
+  padding: 25px;
+  box-shadow: 15px 15px 10px black;
+}
+@media (max-width: 1300px) {
+  .habilidades .descricao {
+    width: 70%;
+  }
+}
+@media (max-width: 900px) {
+  .habilidades .descricao {
+    width: 80%;
+  }
+}
+.habilidades .descricao .verde, .habilidades .descricao .vermelho {
+  margin-top: 10px;
+  font-weight: 600;
+}
+.habilidades .descricao .verde span, .habilidades .descricao .vermelho span {
+  color: black;
+}
+.habilidades .descricao .verde {
+  color: rgb(0, 170, 0);
+}
+.habilidades .descricao .vermelho {
+  color: red;
+}
+.habilidades .subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.habilidades .infos {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  width: calc(120% - 50px);
+  background-color: blue;
+  transform: translate(calc(-10% - 25px));
+  box-shadow: 15px 15px 10px black;
+  margin-bottom: 50px;
+}
+@media (max-width: 1300px) {
+  .habilidades .infos {
+    width: calc(140% - 50px);
+    transform: translate(calc(-15% - 25px));
+  }
+}
+@media (max-width: 1100px) {
+  .habilidades .infos {
+    width: calc(160% - 50px);
+    transform: translate(calc(-20% - 25px));
+  }
+}
+@media (max-width: 900px) {
+  .habilidades .infos {
+    width: 100%;
+    transform: translate(-10%);
+  }
+}
+@media (max-width: 600px) {
+  .habilidades .infos {
+    width: 80%;
+    transform: translate(0);
+  }
+}
+.habilidades .infos .personagem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+@media (max-width: 700px) {
+  .habilidades .infos .personagem {
+    flex-direction: column;
+  }
+}
+.habilidades .infos .personagem p {
+  font-size: 1.2rem;
+}
+.habilidades .infos .personagem p span {
+  font-weight: 600;
+}
+.habilidades .infos .personagem .avatar {
+  margin-right: 20px;
+}
+.habilidades .infos .subtitle {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+.habilidades .infos .nivelHabilidade {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.habilidades .infos .nivelHabilidade .habilidades {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.habilidades .infos .nivelHabilidade .habilidades p {
+  text-align: center;
+  height: 30px;
+}
+.habilidades .infos .nivelHabilidade .nivel {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.habilidades .infos .nivelHabilidade .nivel span {
+  height: 20px;
+  width: 100%;
+  border: 1px solid red;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 5px black;
+}
+.habilidades .infos .nivelHabilidade .nivel span div {
+  background-color: red;
+  height: 20px;
+  border-radius: 10px;
+}
+.habilidades .infos .nivelHabilidade .nivel span .ui {
+  width: 80%;
+}
+.habilidades .infos .nivelHabilidade .nivel span .responsividade {
+  width: 85%;
+}
+.habilidades .infos .nivelHabilidade .nivel span .frameworks {
+  width: 70%;
 }
 .habilidades .tecnologias, .habilidades .boosters {
   background-color: red;
@@ -21,6 +194,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 900px) {
+  .habilidades .tecnologias, .habilidades .boosters {
+    width: 90%;
+    margin: 0;
+    min-height: 200px;
+  }
 }
 .habilidades .tecnologias .title, .habilidades .boosters .title {
   font-size: 1.8rem;
@@ -35,39 +215,6 @@
   .habilidades .tecnologias {
     margin-left: 20px;
   }
-}
-.habilidades .tecnologias .descricao {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  min-height: 200px;
-  background-color: blue;
-  margin-bottom: 50px;
-  padding: 25px;
-  box-shadow: 15px 15px 10px black;
-}
-@media (max-width: 1300px) {
-  .habilidades .tecnologias .descricao {
-    width: 70%;
-  }
-}
-.habilidades .tecnologias .descricao .verde, .habilidades .tecnologias .descricao .vermelho {
-  margin-top: 10px;
-  font-weight: 600;
-}
-.habilidades .tecnologias .descricao .verde span, .habilidades .tecnologias .descricao .vermelho span {
-  color: black;
-}
-.habilidades .tecnologias .descricao .verde {
-  color: rgb(0, 170, 0);
-}
-.habilidades .tecnologias .descricao .vermelho {
-  color: red;
-}
-.habilidades .tecnologias .subtitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 15px;
 }
 .habilidades .tecnologias ul li {
   border-radius: 5px;
@@ -177,88 +324,10 @@
     margin-right: 20px;
   }
 }
-.habilidades .boosters .infos {
-  display: flex;
-  flex-direction: column;
-  padding: 25px;
-  width: calc(120% - 50px);
-  background-color: blue;
-  transform: translate(calc(-10% - 25px));
-  box-shadow: 15px 15px 10px black;
-  margin-bottom: 50px;
-}
-@media (max-width: 1300px) {
-  .habilidades .boosters .infos {
-    width: calc(140% - 50px);
-    transform: translate(calc(-15% - 25px));
+@media (max-width: 900px) {
+  .habilidades .boosters {
+    margin-right: 0px;
   }
-}
-@media (max-width: 1100px) {
-  .habilidades .boosters .infos {
-    width: calc(160% - 50px);
-    transform: translate(calc(-20% - 25px));
-  }
-}
-.habilidades .boosters .infos .personagem {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: 50px;
-}
-.habilidades .boosters .infos .personagem p {
-  font-size: 1.3rem;
-}
-.habilidades .boosters .infos .personagem p span {
-  font-weight: 600;
-}
-.habilidades .boosters .infos .personagem .avatar {
-  margin-right: 20px;
-}
-.habilidades .boosters .infos .subtitle {
-  font-size: 1.8rem;
-  font-weight: 900;
-  margin-bottom: 15px;
-}
-.habilidades .boosters .infos .nivelHabilidade {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.habilidades .boosters .infos .nivelHabilidade .habilidades {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-.habilidades .boosters .infos .nivelHabilidade .habilidades p {
-  text-align: center;
-  height: 30px;
-}
-.habilidades .boosters .infos .nivelHabilidade .nivel {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-}
-.habilidades .boosters .infos .nivelHabilidade .nivel span {
-  height: 20px;
-  width: 100%;
-  border: 1px solid red;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 7px 7px 5px black;
-}
-.habilidades .boosters .infos .nivelHabilidade .nivel span div {
-  background-color: red;
-  height: 20px;
-  border-radius: 10px;
-}
-.habilidades .boosters .infos .nivelHabilidade .nivel span .ui {
-  width: 80%;
-}
-.habilidades .boosters .infos .nivelHabilidade .nivel span .responsividade {
-  width: 85%;
-}
-.habilidades .boosters .infos .nivelHabilidade .nivel span .frameworks {
-  width: 70%;
 }
 
 /*# sourceMappingURL=Habilidades.module.css.map */
