@@ -61,7 +61,7 @@ export default function Habilidades({ i18n }){
                         </ul>
                         <div className={style.descricao}>
                             <p className={style.subtitle}>Descrição</p>
-                            <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
+                            <p className={style.descricaoText}>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
                             {tecnologiaAtiva !== 0 ?
                                 <>
                                     <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
