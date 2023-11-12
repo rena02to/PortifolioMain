@@ -44,7 +44,7 @@
   box-shadow: 15px 15px 10px black;
 }
 .habilidades .descricao .descricaoText {
-  font-size: 1rem;
+  font-size: 1rem !important;
 }
 @media (max-width: 1300px) {
   .habilidades .descricao {
