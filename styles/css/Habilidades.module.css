@@ -367,6 +367,12 @@
 .habilidades .geral .descricao .tipo span {
   font-weight: 600;
 }
+.habilidades .geral .descricao p {
+  font-size: 1rem;
+}
+.habilidades .geral .descricao .subtitle {
+  font-size: 1.5rem;
+}
 .habilidades .geral .infos {
   width: 80%;
   transform: translate(0);
