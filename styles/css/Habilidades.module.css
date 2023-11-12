@@ -367,11 +367,8 @@
 .habilidades .geral .descricao .tipo span {
   font-weight: 600;
 }
-.habilidades .geral .descricao p {
+.habilidades .geral .descricao .descricaoText, .habilidades .geral .descricao .tipo, .habilidades .geral .descricao .verde, .habilidades .geral .descricao .vermelho, .habilidades .geral .descricao .legenda {
   font-size: 1rem !important;
-}
-.habilidades .geral .descricao .subtitle {
-  font-size: 1.5rem !important;
 }
 .habilidades .geral .infos {
   width: 80%;

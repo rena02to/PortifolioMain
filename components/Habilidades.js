@@ -129,7 +129,7 @@ export default function Habilidades({ i18n }){
                     </div>
                     <div className={style.descricao}>
                         <p className={style.subtitle}>Descrição</p>
-                        <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
+                        <p className={style.descricaoText}>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
                         {tecnologiaAtiva !== 0 ?
                             <>
                                 <p className={style.tipo}><span>TIPO:</span> {tipoTecnologiaAtiva}</p>
@@ -137,7 +137,7 @@ export default function Habilidades({ i18n }){
                                     <span>STATUS: </span>{statusTecnologiaAtiva}
                                 </p>
                                 {statusTecnologiaAtiva === 'Locked'?
-                                    <p>{i18n.t('habilidades.emDesenvolvimento')}</p>
+                                    <p className={style.legenda}>{i18n.t('habilidades.emDesenvolvimento')}</p>
                                     : null
                                 }
                             </>
