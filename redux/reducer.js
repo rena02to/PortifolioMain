@@ -12,6 +12,7 @@ const initialState = {
     descricao: 'descricaoDefault',
     tecnologiaAtiva: 0,
     statusTecnologiaAtiva: 'Unlocked',
+    tipoTecnologiaAtiva: '',
 }
 
 const useReducer = (state = initialState, action) => {
@@ -46,6 +47,8 @@ const useReducer = (state = initialState, action) => {
             return {...state, tecnologiaAtiva: action.payload}
         case 'setStatusTecnologiaAtiva':
             return {...state, statusTecnologiaAtiva: action.payload}
+        case 'setTipoTecnologiaAtiva':
+            return {...state, tipoTecnologiaAtiva: action.payload}
         default:
             return state;
     }

@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import style from './../styles/css/Habilidades.module.css';
 import { TbBrandRedux, TbBrandNextjs } from 'react-icons/tb';
-import { FaReact, FaSass, FaNodeJs, FaLock } from 'react-icons/fa6';
+import { FaReact, FaSass, FaNodeJs, FaGithub } from 'react-icons/fa6';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 export default function Habilidades({ i18n }){
     const dispatch = useDispatch();
-    const { descricao, enAtivo, tecnologiaAtiva, statusTecnologiaAtiva, windowSize } = useSelector(rootReducer => rootReducer.useReducer)
+    const { descricao, enAtivo, tecnologiaAtiva, statusTecnologiaAtiva, windowSize, tipoTecnologiaAtiva } = useSelector(rootReducer => rootReducer.useReducer)
 
     const tecnologias = [
         { key: 1, value: 'HTML', status: 'Unlocked', icone: <Image src='/images/html.png' height={65} width={60} />, text: 'html' },
@@ -21,7 +21,7 @@ export default function Habilidades({ i18n }){
 
     const boosters = [
         { key: 8, value: 'Sass', status: 'Unlocked', icone: <FaSass className={style.sass} />, text: 'sass' },
-        { key: 9, value: 'GitHub', status: 'Unlocked', icone: <Image src='/images/github.png' height={60} width={60} />, text: 'github' },
+        { key: 9, value: 'GitHub', status: 'Unlocked', icone: <FaGithub className={style.github} />, text: 'github' },
         { key: 10, value: 'UI design', status: 'Unlocked', icone: <Image src='/images/ui.png' width={60} height={60} />, text: 'ui' },
         { key: 11, value: 'UX design', status: 'Unlocked', icone: <Image src='/images/ux.png' width={60} height={60} />, text: 'ux' },
         { key: 12, value: 'MySQL', status: 'Locked', icone: <Image src='/images/mysql.png' height={60} width={60} />, text: 'mysql' },
@@ -48,47 +48,44 @@ export default function Habilidades({ i18n }){
 
     return(
         <section className={style.habilidades} id="habilidades">
-            <div className={style.tecnologias}>
-                <p className={style.title}>{i18n.t('habilidades.title')}</p>
-                <ul className={style.tecnologiasContainer}>
-                    {tecnologias.map((tecnologia) => (
-                        <li className={tecnologia.key === tecnologiaAtiva ? (tecnologia.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (tecnologia.status === 'Locked' ? style.inativoLocked : null)} key={tecnologia.key} title={tecnologia.value} onClick={() => {dispatch({type: 'setDescricao', payload: tecnologia.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: tecnologia.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: tecnologia.status})}}>
-                            {tecnologia.icone}
-                        </li>
-                    ))}
-                </ul>
-                {windowSize > 900 ?
-                    <div className={style.descricao}>
-                        <p className={style.subtitle}>Descrição</p>
-                        <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
-                        {tecnologiaAtiva !== 0 ?
-                            <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
-                                <span>STATUS: </span>{statusTecnologiaAtiva}
-                            </p> 
-                            : null
-                        }
-                    </div>
-                    : null
-                }
-            </div>
-            {windowSize > 900 ?
-                <Image className={style.leon} src='/images/leon.png' width={400} height={800} />
-                : null
-            }
-            {windowSize <= 900 ?
-                <div className={style.informacoes}>
-                    <Image className={style.leon} src='/images/leon.png' width={400} height={800} />
-                    <div className={style.conteudoInterno}>
+            {windowSize > 1000 ?
+                <>
+                    <div className={style.tecnologias}>
+                        <p className={style.title}>{i18n.t('habilidades.title')}</p>
+                        <ul className={style.tecnologiasContainer}>
+                            {tecnologias.map((tecnologia) => (
+                                <li className={tecnologia.key === tecnologiaAtiva ? (tecnologia.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (tecnologia.status === 'Locked' ? style.inativoLocked : style.inativoUnlocked)} key={tecnologia.key} title={tecnologia.value} onClick={() => {dispatch({type: 'setDescricao', payload: tecnologia.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: tecnologia.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: tecnologia.status}); dispatch({type: 'setTipoTecnologiaAtiva', payload: enAtivo ? 'Technologie' : 'Tecnologia'})}}>
+                                    {tecnologia.icone}
+                                </li>
+                            ))}
+                        </ul>
                         <div className={style.descricao}>
                             <p className={style.subtitle}>Descrição</p>
                             <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
                             {tecnologiaAtiva !== 0 ?
-                                <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
-                                    <span>STATUS: </span>{statusTecnologiaAtiva}
-                                </p> 
+                                <>
+                                    <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
+                                        <span>STATUS: </span>{statusTecnologiaAtiva}
+                                    </p>
+                                    {statusTecnologiaAtiva === 'Locked'?
+                                        <p>{i18n.t('habilidades.emDesenvolvimento')}</p>
+                                        : null
+                                    }
+                                </>
                                 : null
                             }
                         </div>
+                    </div>
+                    <Image className={style.leon} src='/images/leon.png' width={400} height={800} />
+                    <div className={style.boosters}>
+                        <p className={style.title}>BOOSTERS</p>
+                        <ul className={style.boostersContainer}>
+                            {boosters.map((booster) => (
+                                <li className={booster.key === tecnologiaAtiva ? (booster.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (booster.status === 'Locked' ? style.inativoLocked : style.inativoUnlocked)} key={booster.key} title={booster.value} onClick={() => {dispatch({type: 'setDescricao', payload: booster.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: booster.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: booster.status}); dispatch({type: 'setTipoTecnologiaAtiva', payload: 'Booster'})}}>
+                                    {booster.icone}
+                                </li>
+                            ))}
+                        </ul>
                         <div className={style.infos}>
                             <p className={style.subtitle}>RENATO ALVES</p>
                             <div className={style.personagem}>
@@ -109,19 +106,44 @@ export default function Habilidades({ i18n }){
                             </div>
                         </div>
                     </div>
-                </div>
-                : null
+                </>
+            : null
             }
-            <div className={style.boosters}>
-                <p className={style.title}>BOOSTERS</p>
-                <ul className={style.boostersContainer}>
-                    {boosters.map((booster) => (
-                        <li className={booster.key === tecnologiaAtiva ? (booster.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (booster.status === 'Locked' ? style.inativoLocked : null)} key={booster.key} title={booster.value} onClick={() => {dispatch({type: 'setDescricao', payload: booster.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: booster.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: booster.status})}}>
-                            {booster.icone}
-                        </li>
-                    ))}
-                </ul>
-                {windowSize > 900 ?
+            {windowSize <= 1000 ?
+                <div className={style.geral}>
+                    <p className={style.title}>{i18n.t('habilidades.title')} / BOOSTERS</p>
+                    <div className={style.layout}>
+                        <Image className={style.leon} src='/images/leon.png' width={300} height={600} />
+                        <ul>
+                            {tecnologias.map((tecnologia, index) => (
+                                <li className={tecnologia.key === tecnologiaAtiva ? (tecnologia.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (tecnologia.status === 'Locked' ? style.inativoLocked : style.inativoUnlocked)} key={tecnologia.key} title={tecnologia.value} onClick={() => {dispatch({type: 'setDescricao', payload: tecnologia.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: tecnologia.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: tecnologia.status}); dispatch({type: 'setTipoTecnologiaAtiva', payload: enAtivo ? 'Technologie' : 'Tecnologia'})}}>
+                                    {tecnologia.icone}
+                                </li>
+                            ))}
+                            {boosters.map((booster, index) => (
+                                <li className={booster.key === tecnologiaAtiva ? (booster.status === 'Unlocked' ? style.ativoUnlocked : style.ativoLocked) : (booster.status === 'Locked' ? style.inativoLocked : style.inativoUnlocked)} key={booster.key} title={booster.value} onClick={() => {dispatch({type: 'setDescricao', payload: booster.text}); dispatch({type: 'ChangeDescricaoDefault', payload: false}); dispatch({type: 'setTecnologiaAtiva', payload: booster.key}); dispatch({type: 'setStatusTecnologiaAtiva', payload: booster.status}); dispatch({type: 'setTipoTecnologiaAtiva', payload: 'Booster'})}}>
+                                    {booster.icone}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className={style.descricao}>
+                        <p className={style.subtitle}>Descrição</p>
+                        <p>{i18n.t(`habilidades.descricao.${descricao}`)}</p>
+                        {tecnologiaAtiva !== 0 ?
+                            <>
+                                <p className={style.tipo}><span>TIPO:</span> {tipoTecnologiaAtiva}</p>
+                                <p className={statusTecnologiaAtiva === 'Unlocked' ? style.verde : style.vermelho}>
+                                    <span>STATUS: </span>{statusTecnologiaAtiva}
+                                </p>
+                                {statusTecnologiaAtiva === 'Locked'?
+                                    <p>{i18n.t('habilidades.emDesenvolvimento')}</p>
+                                    : null
+                                }
+                            </>
+                            : null
+                        }
+                    </div>
                     <div className={style.infos}>
                         <p className={style.subtitle}>RENATO ALVES</p>
                         <div className={style.personagem}>
@@ -141,9 +163,9 @@ export default function Habilidades({ i18n }){
                             </div>
                         </div>
                     </div>
-                    : null
-                }
-            </div>
+                </div>
+                :null
+            }
         </section>
     );
 }

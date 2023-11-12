@@ -1,26 +1,30 @@
 @use 'mixins'
 @use 'variables'
-    
+
 .habilidades
     padding-top: 100px
     @include mixins.align-center(row)
     justify-content: space-between
-    @include mixins.responsivo-900
+    .tecnologias, .boosters
+        background-color: red
+        border-radius: 10px
+        width: 100%
+        min-height: 600px
+        display: flex
         flex-direction: column
-    .leon
-        @include mixins.responsivo-1100
-            height: 700px
-            width: 350px
-        @include mixins.responsivo-600
-            height: 600px
-            width: 300px
-    .informacoes
-        @include mixins.align-center(row)
-        margin-top: 20px
-        @include mixins.responsivo-600
-            @include mixins.align-center(column)
-        .conteudoInterno
-            @include mixins.align-center(column)
+        align-items: center
+        .title
+            font-size: 1.8rem
+            font-weight: 500
+            padding-bottom: 50px
+            margin-top: 20px
+    .tecnologias
+        margin-left: 100px
+        @include mixins.responsivo-1500
+            margin-left: 20px
+        ul
+            li
+                border-radius: 5px
     .descricao
         display: flex
         flex-direction: column
@@ -32,8 +36,6 @@
         box-shadow: 15px 15px 10px black
         @include mixins.responsivo-1300
             width: 70%
-        @include mixins.responsivo-900
-            width: 80%
         .verde, .vermelho
             margin-top: 10px
             font-weight: 600
@@ -43,13 +45,22 @@
             color: variables.$green-color
         .vermelho
             color: red
-    .subtitle
-        font-size: 1.5rem
-        font-weight: 600
-        margin-bottom: 15px
-        font-size: 1.5rem
-        font-weight: 600
-        margin-bottom: 15px
+        .subtitle
+            font-size: 1.5rem
+            font-weight: 600
+            margin-bottom: 15px
+            font-size: 1.5rem
+            font-weight: 600
+            margin-bottom: 15px
+    .boosters
+        margin-right: 100px
+        @include mixins.responsivo-1500
+            margin-right: 20px
+        .boostersContainer
+            li
+                border-radius: 50%
+            .locked::after
+                border-radius: 50%
     .infos
         display: flex
         flex-direction: column
@@ -65,19 +76,11 @@
         @include mixins.responsivo-1100
             width: calc( 160% -  50px)
             transform: translate(calc( -20% - 25px ))
-        @include mixins.responsivo-900
-            width: 100%
-            transform: translate(-10%)
-        @include mixins.responsivo-600
-            width: 80%
-            transform: translate(0)
         .personagem
             display: flex
             flex-direction: row
             justify-content: space-between
             padding-bottom: 50px
-            @include mixins.responsivo-700
-                flex-direction: column
             p
                 font-size: 1.2rem
                 span
@@ -120,35 +123,7 @@
                         width: variables.$responsividade
                     .frameworks
                         width: variables.$frameworks
-    .tecnologias, .boosters
-        background-color: red
-        border-radius: 10px
-        width: 100%
-        min-height: 600px
-        display: flex
-        flex-direction: column
-        align-items: center
-        @include mixins.responsivo-900
-            width: 90%
-            margin: 0
-            min-height: 200px
-        .title
-            font-size: 1.8rem
-            font-weight: 500
-            padding-bottom: 50px
-            margin-top: 20px
-    .tecnologias
-        margin-left: 100px
-        @include mixins.responsivo-1500
-            margin-left: 20px
-        ul
-            li
-                border-radius: 5px
-    .boostersContainer
-        li
-            border-radius: 50%
-        .locked::after
-            border-radius: 50%
+
     .tecnologiasContainer, .boostersContainer
         display: flex
         flex-direction: row
@@ -158,6 +133,7 @@
         list-style: none
         margin-right: 25px
         margin-bottom: 50px
+    .tecnologiasContainer, .boostersContainer, .layout
         li
             height: 80px
             width: 80px
@@ -216,9 +192,79 @@
             background-position: center
             @include mixins.responsivo-1300
                 background-size: 30px
-    .boosters
-        margin-right: 100px
-        @include mixins.responsivo-1500
-            margin-right: 20px
-        @include mixins.responsivo-900
-            margin-right: 0px
+        .inativoLocked, .inativoUnlocked
+            filter: grayscale(100%)
+            .next
+                color: gray
+            .github
+                color: gray
+    .geral
+        width: 100%
+        background-color: red
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        padding: 0
+        margin: 0
+        .title
+            font-size: 1.8rem
+            font-weight: 500
+            margin-top: 20px
+            padding-bottom: 50px
+            @include mixins.responsivo-500
+                font-size: 1.5rem
+            @include mixins.responsivo-350
+                font-size: 1.2rem
+        .layout
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            padding: 0
+            @include mixins.responsivo-500
+                flex-direction: column
+            img
+                @include mixins.responsivo-350
+                    height: 500px
+                    width: 250px
+            ul
+                margin: 0
+                padding: 0
+                width: 50%
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-wrap: wrap
+                @include mixins.responsivo-500
+                    width: 90%
+                li
+                    border-radius: 50%
+                    height: 60px
+                    width: 60px
+                    padding: 0
+                    margin: 20px
+                    @include mixins.responsivo-500
+                        height: 50px
+                        width: 50px
+                    svg
+                        height: 40px
+                        width: 40px
+                        @include mixins.responsivo-500
+                            height: 30px
+                            width: 30px
+                    img
+                        height: 40px
+                        width: 40px
+                        @include mixins.responsivo-500
+                            height: 30px
+                            width: 30px
+        .descricao
+            .tipo
+                margin-top: 10px
+                span
+                    font-weight: 600
+        .infos
+            width: 80%
+            transform: translate(0)
+            

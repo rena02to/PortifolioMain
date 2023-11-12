@@ -7,43 +7,31 @@
   align-items: center;
   justify-content: space-between;
 }
-@media (max-width: 900px) {
-  .habilidades {
-    flex-direction: column;
-  }
-}
-@media (max-width: 1100px) {
-  .habilidades .leon {
-    height: 700px;
-    width: 350px;
-  }
-}
-@media (max-width: 600px) {
-  .habilidades .leon {
-    height: 600px;
-    width: 300px;
-  }
-}
-.habilidades .informacoes {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-@media (max-width: 600px) {
-  .habilidades .informacoes {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.habilidades .informacoes .conteudoInterno {
+.habilidades .tecnologias, .habilidades .boosters {
+  background-color: red;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+.habilidades .tecnologias .title, .habilidades .boosters .title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-bottom: 50px;
+  margin-top: 20px;
+}
+.habilidades .tecnologias {
+  margin-left: 100px;
+}
+@media (max-width: 1500px) {
+  .habilidades .tecnologias {
+    margin-left: 20px;
+  }
+}
+.habilidades .tecnologias ul li {
+  border-radius: 5px;
 }
 .habilidades .descricao {
   display: flex;
@@ -60,11 +48,6 @@
     width: 70%;
   }
 }
-@media (max-width: 900px) {
-  .habilidades .descricao {
-    width: 80%;
-  }
-}
 .habilidades .descricao .verde, .habilidades .descricao .vermelho {
   margin-top: 10px;
   font-weight: 600;
@@ -78,13 +61,27 @@
 .habilidades .descricao .vermelho {
   color: red;
 }
-.habilidades .subtitle {
+.habilidades .descricao .subtitle {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
+}
+.habilidades .boosters {
+  margin-right: 100px;
+}
+@media (max-width: 1500px) {
+  .habilidades .boosters {
+    margin-right: 20px;
+  }
+}
+.habilidades .boosters .boostersContainer li {
+  border-radius: 50%;
+}
+.habilidades .boosters .boostersContainer .locked::after {
+  border-radius: 50%;
 }
 .habilidades .infos {
   display: flex;
@@ -108,28 +105,11 @@
     transform: translate(calc(-20% - 25px));
   }
 }
-@media (max-width: 900px) {
-  .habilidades .infos {
-    width: 100%;
-    transform: translate(-10%);
-  }
-}
-@media (max-width: 600px) {
-  .habilidades .infos {
-    width: 80%;
-    transform: translate(0);
-  }
-}
 .habilidades .infos .personagem {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 50px;
-}
-@media (max-width: 700px) {
-  .habilidades .infos .personagem {
-    flex-direction: column;
-  }
 }
 .habilidades .infos .personagem p {
   font-size: 1.2rem;
@@ -186,45 +166,6 @@
 .habilidades .infos .nivelHabilidade .nivel span .frameworks {
   width: 70%;
 }
-.habilidades .tecnologias, .habilidades .boosters {
-  background-color: red;
-  border-radius: 10px;
-  width: 100%;
-  min-height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media (max-width: 900px) {
-  .habilidades .tecnologias, .habilidades .boosters {
-    width: 90%;
-    margin: 0;
-    min-height: 200px;
-  }
-}
-.habilidades .tecnologias .title, .habilidades .boosters .title {
-  font-size: 1.8rem;
-  font-weight: 500;
-  padding-bottom: 50px;
-  margin-top: 20px;
-}
-.habilidades .tecnologias {
-  margin-left: 100px;
-}
-@media (max-width: 1500px) {
-  .habilidades .tecnologias {
-    margin-left: 20px;
-  }
-}
-.habilidades .tecnologias ul li {
-  border-radius: 5px;
-}
-.habilidades .boostersContainer li {
-  border-radius: 50%;
-}
-.habilidades .boostersContainer .locked::after {
-  border-radius: 50%;
-}
 .habilidades .tecnologiasContainer, .habilidades .boostersContainer {
   display: flex;
   flex-direction: row;
@@ -235,7 +176,7 @@
   margin-right: 25px;
   margin-bottom: 50px;
 }
-.habilidades .tecnologiasContainer li, .habilidades .boostersContainer li {
+.habilidades .tecnologiasContainer li, .habilidades .boostersContainer li, .habilidades .layout li {
   height: 80px;
   width: 80px;
   background-color: white;
@@ -249,58 +190,58 @@
   position: relative;
 }
 @media (max-width: 1300px) {
-  .habilidades .tecnologiasContainer li, .habilidades .boostersContainer li {
+  .habilidades .tecnologiasContainer li, .habilidades .boostersContainer li, .habilidades .layout li {
     height: 50px;
     width: 50px;
   }
 }
-.habilidades .tecnologiasContainer li svg, .habilidades .boostersContainer li svg {
+.habilidades .tecnologiasContainer li svg, .habilidades .boostersContainer li svg, .habilidades .layout li svg {
   height: 60px;
   width: 60px;
 }
 @media (max-width: 1300px) {
-  .habilidades .tecnologiasContainer li svg, .habilidades .boostersContainer li svg {
+  .habilidades .tecnologiasContainer li svg, .habilidades .boostersContainer li svg, .habilidades .layout li svg {
     height: 40px;
     width: 40px;
   }
 }
 @media (max-width: 1300px) {
-  .habilidades .tecnologiasContainer li img, .habilidades .boostersContainer li img {
+  .habilidades .tecnologiasContainer li img, .habilidades .boostersContainer li img, .habilidades .layout li img {
     height: 40px;
     width: 40px;
   }
 }
-.habilidades .tecnologiasContainer li .html, .habilidades .boostersContainer li .html {
+.habilidades .tecnologiasContainer li .html, .habilidades .boostersContainer li .html, .habilidades .layout li .html {
   color: rgb(228, 77, 38);
 }
-.habilidades .tecnologiasContainer li .css, .habilidades .boostersContainer li .css {
+.habilidades .tecnologiasContainer li .css, .habilidades .boostersContainer li .css, .habilidades .layout li .css {
   color: rgb(38, 77, 228);
 }
-.habilidades .tecnologiasContainer li .js, .habilidades .boostersContainer li .js {
+.habilidades .tecnologiasContainer li .js, .habilidades .boostersContainer li .js, .habilidades .layout li .js {
   color: rgb(247, 223, 30);
 }
-.habilidades .tecnologiasContainer li .react, .habilidades .boostersContainer li .react {
+.habilidades .tecnologiasContainer li .react, .habilidades .boostersContainer li .react, .habilidades .layout li .react {
   color: rgb(0, 216, 255);
 }
-.habilidades .tecnologiasContainer li .redux, .habilidades .boostersContainer li .redux {
+.habilidades .tecnologiasContainer li .redux, .habilidades .boostersContainer li .redux, .habilidades .layout li .redux {
   color: rgb(118, 74, 188);
 }
-.habilidades .tecnologiasContainer li .node, .habilidades .boostersContainer li .node {
+.habilidades .tecnologiasContainer li .node, .habilidades .boostersContainer li .node, .habilidades .layout li .node {
   color: rgb(140, 200, 75);
 }
-.habilidades .tecnologiasContainer li .sass, .habilidades .boostersContainer li .sass {
+.habilidades .tecnologiasContainer li .sass, .habilidades .boostersContainer li .sass, .habilidades .layout li .sass {
   color: rgb(204, 102, 153);
 }
-.habilidades .tecnologiasContainer li .ts, .habilidades .boostersContainer li .ts {
+.habilidades .tecnologiasContainer li .ts, .habilidades .boostersContainer li .ts, .habilidades .layout li .ts {
   color: rgb(49, 120, 198);
 }
-.habilidades .tecnologiasContainer li .mysql, .habilidades .boostersContainer li .mysql {
+.habilidades .tecnologiasContainer li .mysql, .habilidades .boostersContainer li .mysql, .habilidades .layout li .mysql {
   color: rgb(0, 56, 168);
 }
-.habilidades .tecnologiasContainer .ativoUnlocked, .habilidades .tecnologiasContainer .ativoLocked, .habilidades .boostersContainer .ativoUnlocked, .habilidades .boostersContainer .ativoLocked {
+.habilidades .tecnologiasContainer .ativoUnlocked, .habilidades .tecnologiasContainer .ativoLocked, .habilidades .boostersContainer .ativoUnlocked, .habilidades .boostersContainer .ativoLocked, .habilidades .layout .ativoUnlocked, .habilidades .layout .ativoLocked {
   box-shadow: 0px 0px 10px 10px rgb(100, 100, 100);
 }
-.habilidades .tecnologiasContainer .ativoLocked::after, .habilidades .tecnologiasContainer .inativoLocked::after, .habilidades .boostersContainer .ativoLocked::after, .habilidades .boostersContainer .inativoLocked::after {
+.habilidades .tecnologiasContainer .ativoLocked::after, .habilidades .tecnologiasContainer .inativoLocked::after, .habilidades .boostersContainer .ativoLocked::after, .habilidades .boostersContainer .inativoLocked::after, .habilidades .layout .ativoLocked::after, .habilidades .layout .inativoLocked::after {
   content: "";
   background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -312,22 +253,119 @@
   background-position: center;
 }
 @media (max-width: 1300px) {
-  .habilidades .tecnologiasContainer .ativoLocked::after, .habilidades .tecnologiasContainer .inativoLocked::after, .habilidades .boostersContainer .ativoLocked::after, .habilidades .boostersContainer .inativoLocked::after {
+  .habilidades .tecnologiasContainer .ativoLocked::after, .habilidades .tecnologiasContainer .inativoLocked::after, .habilidades .boostersContainer .ativoLocked::after, .habilidades .boostersContainer .inativoLocked::after, .habilidades .layout .ativoLocked::after, .habilidades .layout .inativoLocked::after {
     background-size: 30px;
   }
 }
-.habilidades .boosters {
-  margin-right: 100px;
+.habilidades .tecnologiasContainer .inativoLocked, .habilidades .tecnologiasContainer .inativoUnlocked, .habilidades .boostersContainer .inativoLocked, .habilidades .boostersContainer .inativoUnlocked, .habilidades .layout .inativoLocked, .habilidades .layout .inativoUnlocked {
+  filter: grayscale(100%);
 }
-@media (max-width: 1500px) {
-  .habilidades .boosters {
-    margin-right: 20px;
+.habilidades .tecnologiasContainer .inativoLocked .next, .habilidades .tecnologiasContainer .inativoUnlocked .next, .habilidades .boostersContainer .inativoLocked .next, .habilidades .boostersContainer .inativoUnlocked .next, .habilidades .layout .inativoLocked .next, .habilidades .layout .inativoUnlocked .next {
+  color: gray;
+}
+.habilidades .tecnologiasContainer .inativoLocked .github, .habilidades .tecnologiasContainer .inativoUnlocked .github, .habilidades .boostersContainer .inativoLocked .github, .habilidades .boostersContainer .inativoUnlocked .github, .habilidades .layout .inativoLocked .github, .habilidades .layout .inativoUnlocked .github {
+  color: gray;
+}
+.habilidades .geral {
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.habilidades .geral .title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 20px;
+  padding-bottom: 50px;
+}
+@media (max-width: 500px) {
+  .habilidades .geral .title {
+    font-size: 1.5rem;
   }
 }
-@media (max-width: 900px) {
-  .habilidades .boosters {
-    margin-right: 0px;
+@media (max-width: 350px) {
+  .habilidades .geral .title {
+    font-size: 1.2rem;
   }
+}
+.habilidades .geral .layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+@media (max-width: 500px) {
+  .habilidades .geral .layout {
+    flex-direction: column;
+  }
+}
+@media (max-width: 350px) {
+  .habilidades .geral .layout img {
+    height: 500px;
+    width: 250px;
+  }
+}
+.habilidades .geral .layout ul {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  .habilidades .geral .layout ul {
+    width: 90%;
+  }
+}
+.habilidades .geral .layout ul li {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  padding: 0;
+  margin: 20px;
+}
+@media (max-width: 500px) {
+  .habilidades .geral .layout ul li {
+    height: 50px;
+    width: 50px;
+  }
+}
+.habilidades .geral .layout ul li svg {
+  height: 40px;
+  width: 40px;
+}
+@media (max-width: 500px) {
+  .habilidades .geral .layout ul li svg {
+    height: 30px;
+    width: 30px;
+  }
+}
+.habilidades .geral .layout ul li img {
+  height: 40px;
+  width: 40px;
+}
+@media (max-width: 500px) {
+  .habilidades .geral .layout ul li img {
+    height: 30px;
+    width: 30px;
+  }
+}
+.habilidades .geral .descricao .tipo {
+  margin-top: 10px;
+}
+.habilidades .geral .descricao .tipo span {
+  font-weight: 600;
+}
+.habilidades .geral .infos {
+  width: 80%;
+  transform: translate(0);
 }
 
 /*# sourceMappingURL=Habilidades.module.css.map */

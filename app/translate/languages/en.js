@@ -87,6 +87,7 @@ export const messages = {
                     ingles: 'Knowledge of the English language is essential for software developers, as technical documentation, the developer community and many resources are predominantly in English. Facilitates communication and understanding of emerging technologies.',
                     descricaoDefault: 'Click on the icon to see the description of the technology, or booster.',
                 },
+                emDesenvolvimento: '(Developing skill)',
             },
             footer: {
                 link: 'Credit to creators',

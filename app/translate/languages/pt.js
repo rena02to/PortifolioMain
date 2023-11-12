@@ -87,6 +87,7 @@ export const messages = {
                     ingles: 'Conhecimento da língua inglesa é essencial para desenvolvedores de software, pois a documentação técnica, a comunidade de desenvolvedores e muitos recursos estão predominantemente em inglês. Facilita a comunicação e o entendimento de tecnologias emergentes.',
                     descricaoDefault: 'Clique no ícone para ver a descrição da tecnologia, ou booster.',
                 },
+                emDesenvolvimento: '(Habilidade em desenvolvimento)',
             },
             footer: {
                 link: 'Crédito aos criadores',
