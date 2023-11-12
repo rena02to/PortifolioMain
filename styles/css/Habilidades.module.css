@@ -138,6 +138,7 @@
 .habilidades .infos .nivelHabilidade .habilidades p {
   text-align: center;
   height: 30px;
+  font-size: 1rem;
 }
 .habilidades .infos .nivelHabilidade .nivel {
   display: flex;
