@@ -20,8 +20,8 @@ export default function Home() {
         <Navbar i18n={i18n} changeLanguage={changeLanguage} />
         <main>
           <HomePage i18n={i18n} />
-          <Projetos i18n={i18n} />
           <Sobre i18n={i18n} />
+          <Projetos i18n={i18n} />
           <Habilidades i18n={i18n} />
           <ContateMe i18n={i18n} />
         </main>

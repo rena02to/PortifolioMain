@@ -3,8 +3,8 @@ export const messages = {
         translations: {
             navbar: {
                 title: 'Front-end Developer',
-                item2: 'Projects',
-                item3: 'About me',
+                item2: 'About me',
+                item3: 'Projects',
                 item4: 'Skills',
                 item5: 'Contact me',
                 config: {

@@ -93,7 +93,7 @@ export default function Habilidades({ i18n }){
                                 <p><span>{i18n.t('habilidades.level')}:</span> 999+</p>
                             </div>
                             <div className={style.nivelHabilidade}>
-                                <div className={style.habilidades}>
+                                <div className={style.habilidadesText}>
                                     <p>UI design</p>
                                     <p>{i18n.t('habilidades.responsividade')}</p>
                                     <p>{i18n.t('habilidades.frameworks')}</p>
@@ -151,7 +151,7 @@ export default function Habilidades({ i18n }){
                             <p><span>{i18n.t('habilidades.level')}:</span> 999+</p>
                         </div>
                         <div className={style.nivelHabilidade}>
-                            <div className={style.habilidades}>
+                            <div className={style.habilidadesText}>
                                 <p>UI design</p>
                                 <p>{i18n.t('habilidades.responsividade')}</p>
                                 <p>{i18n.t('habilidades.frameworks')}</p>

@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 10px 25px;
 }
 .logo p {
   font-family: "Edu TAS Beginner", cursive;
@@ -26,33 +26,41 @@
   color: rgb(100, 100, 100);
 }
 
-.navbar {
+.back {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 20px;
+}
+.back .navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid black;
-  background-color: rgb(240, 240, 240);
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: rgb(200, 200, 200);
   position: fixed;
-  width: 100%;
+  width: 98%;
   z-index: 10;
+  margin-top: 10px;
 }
-.navbar button {
+.back .navbar button {
   border: 0px solid transparent;
   background-color: transparent;
   cursor: pointer;
 }
-.navbar svg {
+.back .navbar svg {
   height: 30px;
   width: 30px;
 }
 @media (max-width: 350px) {
-  .navbar svg {
+  .back .navbar svg {
     width: 15px;
     height: 15px;
   }
 }
-.navbar ul {
+.back .navbar ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -61,68 +69,68 @@
   padding-left: 50px;
 }
 @media (max-width: 600px) {
-  .navbar ul {
+  .back .navbar ul {
     padding-left: 0;
   }
 }
-.navbar ul li {
+.back .navbar ul li {
   padding: 10px 25px 10px 25px;
 }
 @media (max-width: 800px) {
-  .navbar ul li {
+  .back .navbar ul li {
     padding: 10px 15px 10px 15px;
   }
 }
-.navbar ul li svg {
+.back .navbar ul li svg {
   height: 30px;
   width: 30px;
 }
 @media (max-width: 800px) {
-  .navbar ul li svg {
+  .back .navbar ul li svg {
     height: 20px;
     width: 20px;
   }
 }
-.navbar ul li a {
+.back .navbar ul li a {
   text-decoration: none;
   color: black;
 }
-.navbar ul li .ativo {
+.back .navbar ul li .ativo {
   color: rgb(0, 100, 200);
 }
-.navbar ul li .ativo svg {
+.back .navbar ul li .ativo svg {
   animation: rotate 1s 1;
 }
-.navbar ul li .inativo:hover {
+.back .navbar ul li .inativo:hover {
   color: rgb(100, 100, 100);
 }
-.navbar ul .lista_inativo:hover {
+.back .navbar ul .lista_inativo:hover {
   transform: translateY(-3px);
 }
-.navbar .containerMenu {
+.back .navbar .containerMenu {
   position: relative;
   display: inline-block;
 }
-.navbar .containerMenu .menuButton {
+.back .navbar .containerMenu .menuButton {
   margin-left: 20px;
   margin-right: 20px;
 }
 @media (max-width: 600px) {
-  .navbar .containerMenu .menuButton svg {
+  .back .navbar .containerMenu .menuButton svg {
     height: 20px;
     width: 20px;
   }
 }
-.navbar .containerMenu .menuButton .menuClose {
+.back .navbar .containerMenu .menuButton .menuClose {
   transition: transform 0.5s ease, color 0.5s ease;
 }
-.navbar .containerMenu .menuButton .menuOpen {
+.back .navbar .containerMenu .menuButton .menuOpen {
   transform: rotate(90deg);
   color: rgb(0, 100, 200);
   transition: transform 0.5s ease, color 0.5s ease;
 }
-.navbar .containerMenu .menu {
-  background-color: rgb(240, 240, 240);
+.back .navbar .containerMenu .menu {
+  background-color: rgb(200, 200, 200);
   border-radius: 15px;
   border: 2px solid black;
   animation: fade-in 0.5s ease-in-out;
@@ -131,14 +139,14 @@
   left: 0;
   top: 30px;
 }
-.navbar .containerMenu .menu ul {
+.back .navbar .containerMenu .menu ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 @media (max-width: 600px) {
-  .navbar .containerMenu .menu ul li a {
+  .back .navbar .containerMenu .menu ul li a {
     font-size: 0.7rem;
   }
 }
@@ -178,7 +186,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(200, 200, 200);
   border-radius: 15px;
   padding: 20px 20px 0 20px;
   border: 2px solid black;

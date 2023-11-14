@@ -7,8 +7,13 @@
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 1000px) {
+  .habilidades {
+    background-color: white;
+  }
+}
 .habilidades .tecnologias, .habilidades .boosters {
-  background-color: red;
+  background-color: blue;
   border-radius: 10px;
   width: 100%;
   min-height: 600px;
@@ -23,7 +28,7 @@
   margin-top: 20px;
 }
 .habilidades .tecnologias {
-  margin-left: 100px;
+  margin-left: 50px;
 }
 @media (max-width: 1500px) {
   .habilidades .tecnologias {
@@ -38,7 +43,7 @@
   flex-direction: column;
   width: 80%;
   min-height: 200px;
-  background-color: blue;
+  background-color: rgb(184, 19, 101);
   margin-bottom: 50px;
   padding: 25px;
   box-shadow: 15px 15px 10px black;
@@ -73,7 +78,7 @@
   margin-bottom: 15px;
 }
 .habilidades .boosters {
-  margin-right: 100px;
+  margin-right: 50px;
 }
 @media (max-width: 1500px) {
   .habilidades .boosters {
@@ -90,23 +95,10 @@
   display: flex;
   flex-direction: column;
   padding: 25px;
-  width: calc(120% - 50px);
-  background-color: blue;
-  transform: translate(calc(-10% - 25px));
+  background-color: rgb(184, 19, 101);
   box-shadow: 15px 15px 10px black;
   margin-bottom: 50px;
-}
-@media (max-width: 1300px) {
-  .habilidades .infos {
-    width: calc(140% - 50px);
-    transform: translate(calc(-15% - 25px));
-  }
-}
-@media (max-width: 1100px) {
-  .habilidades .infos {
-    width: calc(160% - 50px);
-    transform: translate(calc(-20% - 25px));
-  }
+  width: 80%;
 }
 .habilidades .infos .personagem {
   display: flex;
@@ -133,12 +125,12 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.habilidades .infos .nivelHabilidade .habilidades {
+.habilidades .infos .nivelHabilidade .habilidadesText {
   display: flex;
   flex-direction: column;
   padding: 0;
 }
-.habilidades .infos .nivelHabilidade .habilidades p {
+.habilidades .infos .nivelHabilidade .habilidadesText p {
   text-align: center;
   height: 30px;
   font-size: 1rem;
@@ -151,13 +143,14 @@
 .habilidades .infos .nivelHabilidade .nivel span {
   height: 20px;
   width: 100%;
-  border: 1px solid red;
+  border: 2px solid rgb(245, 143, 41);
+  background-color: rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 7px 7px 5px black;
 }
 .habilidades .infos .nivelHabilidade .nivel span div {
-  background-color: red;
+  background-color: rgb(245, 143, 41);
   height: 20px;
   border-radius: 10px;
 }
@@ -272,7 +265,6 @@
 }
 .habilidades .geral {
   width: 100%;
-  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;

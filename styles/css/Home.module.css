@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   background-size: 600px;
+  background-color: white;
 }
 @media (max-width: 900px) {
   .home {
@@ -143,7 +144,7 @@
 .home .geral .conteudo .helpMenu {
   position: absolute;
   background-color: rgb(75, 75, 75);
-  color: rgb(240, 240, 240);
+  color: rgb(200, 200, 200);
   padding: 20px;
   text-align: center;
   border-radius: 6px;
