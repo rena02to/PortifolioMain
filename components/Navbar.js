@@ -70,6 +70,7 @@ export default function Navbar({ i18n, changeLanguage }){
         }
     }, []);
 
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (menuOpen || settingOpen){

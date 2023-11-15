@@ -3,7 +3,7 @@
     
 .logo
     @include mixins.align-center(column)
-    padding: 10px 0 10px 25px
+    padding: 15px 0 15px 25px
     p
         font-family: variables.$font
         font-size: 1.4rem
@@ -21,16 +21,17 @@
     display: flex
     justify-content: center
     width: 100%
-    padding-bottom: 20px
-    .navbar
+    position: fixed
+    z-index: 10
+    nav
         @include mixins.align-center(row)
         justify-content: space-between
-        border-radius: 20px
         background-color: variables.$nav-color
-        position: fixed
         width: 98%
-        z-index: 10
+        max-width: 1000px
         margin-top: 10px
+        border-radius: 15px
+        box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.8)
         button
             border: 0px solid transparent
             background-color: transparent
@@ -197,8 +198,8 @@
                             height: 32px
                             border-radius: 34px
                             background-image: url('/images/brasil.png')
-                            background-size: 47px 47px
-                            background-position-y: -5px
+                            background-size: 48px 48px
+                            background-position-y: -6px
                     input
                         &:checked + .slider
                             background-color: #ccc

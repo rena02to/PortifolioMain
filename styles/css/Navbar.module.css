@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px 0 10px 25px;
+  padding: 15px 0 15px 25px;
 }
 .logo p {
   font-family: "Edu TAS Beginner", cursive;
@@ -30,37 +30,38 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-bottom: 20px;
+  position: fixed;
+  z-index: 10;
 }
-.back .navbar {
+.back nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  border-radius: 20px;
-  background-color: rgb(200, 200, 200);
-  position: fixed;
+  background-color: rgb(230, 230, 230);
   width: 98%;
-  z-index: 10;
+  max-width: 1000px;
   margin-top: 10px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.8);
 }
-.back .navbar button {
+.back nav button {
   border: 0px solid transparent;
   background-color: transparent;
   cursor: pointer;
 }
-.back .navbar svg {
+.back nav svg {
   height: 30px;
   width: 30px;
 }
 @media (max-width: 350px) {
-  .back .navbar svg {
+  .back nav svg {
     width: 15px;
     height: 15px;
   }
 }
-.back .navbar ul {
+.back nav ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,67 +70,67 @@
   padding-left: 50px;
 }
 @media (max-width: 600px) {
-  .back .navbar ul {
+  .back nav ul {
     padding-left: 0;
   }
 }
-.back .navbar ul li {
+.back nav ul li {
   padding: 10px 25px 10px 25px;
 }
 @media (max-width: 800px) {
-  .back .navbar ul li {
+  .back nav ul li {
     padding: 10px 15px 10px 15px;
   }
 }
-.back .navbar ul li svg {
+.back nav ul li svg {
   height: 30px;
   width: 30px;
 }
 @media (max-width: 800px) {
-  .back .navbar ul li svg {
+  .back nav ul li svg {
     height: 20px;
     width: 20px;
   }
 }
-.back .navbar ul li a {
+.back nav ul li a {
   text-decoration: none;
   color: black;
 }
-.back .navbar ul li .ativo {
+.back nav ul li .ativo {
   color: rgb(0, 100, 200);
 }
-.back .navbar ul li .ativo svg {
+.back nav ul li .ativo svg {
   animation: rotate 1s 1;
 }
-.back .navbar ul li .inativo:hover {
+.back nav ul li .inativo:hover {
   color: rgb(100, 100, 100);
 }
-.back .navbar ul .lista_inativo:hover {
+.back nav ul .lista_inativo:hover {
   transform: translateY(-3px);
 }
-.back .navbar .containerMenu {
+.back nav .containerMenu {
   position: relative;
   display: inline-block;
 }
-.back .navbar .containerMenu .menuButton {
+.back nav .containerMenu .menuButton {
   margin-left: 20px;
   margin-right: 20px;
 }
 @media (max-width: 600px) {
-  .back .navbar .containerMenu .menuButton svg {
+  .back nav .containerMenu .menuButton svg {
     height: 20px;
     width: 20px;
   }
 }
-.back .navbar .containerMenu .menuButton .menuClose {
+.back nav .containerMenu .menuButton .menuClose {
   transition: transform 0.5s ease, color 0.5s ease;
 }
-.back .navbar .containerMenu .menuButton .menuOpen {
+.back nav .containerMenu .menuButton .menuOpen {
   transform: rotate(90deg);
   color: rgb(0, 100, 200);
   transition: transform 0.5s ease, color 0.5s ease;
 }
-.back .navbar .containerMenu .menu {
+.back nav .containerMenu .menu {
   background-color: rgb(240, 240, 240);
   border-radius: 15px;
   border: 2px solid black;
@@ -139,14 +140,14 @@
   left: 0;
   top: 30px;
 }
-.back .navbar .containerMenu .menu ul {
+.back nav .containerMenu .menu ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 @media (max-width: 600px) {
-  .back .navbar .containerMenu .menu ul li a {
+  .back nav .containerMenu .menu ul li a {
     font-size: 0.7rem;
   }
 }
@@ -284,8 +285,8 @@
   height: 32px;
   border-radius: 34px;
   background-image: url("/images/brasil.png");
-  background-size: 47px 47px;
-  background-position-y: -5px;
+  background-size: 48px 48px;
+  background-position-y: -6px;
 }
 .containerSettings .settingsMenu ul li .lang input:checked + .slider {
   background-color: #ccc;

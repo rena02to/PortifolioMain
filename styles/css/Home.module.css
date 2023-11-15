@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap");
 .home {
-  padding-top: 100px;
+  padding-top: 120px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -144,7 +144,7 @@
 .home .geral .conteudo .helpMenu {
   position: absolute;
   background-color: rgb(75, 75, 75);
-  color: rgb(200, 200, 200);
+  color: rgb(230, 230, 230);
   padding: 20px;
   text-align: center;
   border-radius: 6px;
